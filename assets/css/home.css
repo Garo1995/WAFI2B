@@ -1,0 +1,403 @@
+.home-page {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.tagilskaya-sec{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 999999;
+    transition: 2s;
+}
+.home-main-active .tagilskaya-sec{
+    transform: translateY(-100%);
+}
+.tagilskaya-sec-img{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: 2.8s;
+}
+.tagilskaya-sec-img img{
+    transition: 2.8s;
+    width: 100%;
+}
+.tagilskaya-act  .tagilskaya-sec-img img{
+    transform: scale(1.6);
+}
+
+.home-main-active .tagilskaya-sec-img img{
+    transform: scale(1);
+}
+
+
+.tagilskaya-cnt{
+    height: 100vh;
+}
+
+.tagilskaya-logo{
+    gap: 20px;
+}
+.tagilskaya-logo span{
+    display: flex;
+    opacity: 0.1;
+}
+.tagilskaya-logo span:nth-child(5){
+    margin-left: 10px;
+}
+
+.tagilskaya-act span{
+    opacity: 1;
+    transition: 3.4s;
+
+}
+.tagilskaya-act .icon-one svg path{
+    fill: #C49D76;
+}
+
+.tagilskaya-act .icon-two svg path{
+    transition: 2.1s;
+    fill: #ffffff;
+
+}
+.tagilskaya-act .icon-three svg path{
+    transition: 2.4s;
+    fill: #ffffff;
+
+}
+.tagilskaya-act .icon-four svg path{
+    transition: 2.8s;
+    fill: #ffffff;
+
+}
+.tagilskaya-act .icon-five svg path{
+    transition: 3.3s;
+    fill: #ffffff;
+
+}
+.tagilskaya-act .icon-six svg path{
+    transition: 3.8s;
+    fill: #ffffff;
+
+}
+
+
+
+
+
+.tagilskaya-name{
+    margin-top: 40px;
+    margin-left: 400px;
+    transition: 2.2s;
+    opacity: 0;
+    transform: translateY(300px);
+
+}
+.tagilskaya-act .tagilskaya-name{
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+
+
+.home-main{
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: 2.5s;
+}
+.home-main-active .home-main{
+    opacity: 1;
+}
+header{
+    transform: translateY(-100%);
+    transition: 3.0s;
+}
+.home-main-active header{
+    transform: translateY(0);
+}
+
+.home-main:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 81.44%, rgba(0, 0, 0, 0.7) 100%);
+
+}
+
+.first-business-anime{
+    transition: 2.2s;
+
+    transform: translateY(100%);
+}
+.home-main-active .first-business-anime{
+    transform: translateY(0);
+}
+h1{
+    font-weight: 400;
+    font-size: 128px;
+    leading-trim: Cap height;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.first-business{
+    padding-top: 200px;
+    padding-bottom: 120px;
+    height: 100vh;
+    position: relative;
+    z-index: 11;
+}
+.first-business-info h1 + h1{
+    position: relative;
+    top: 5px;
+}
+.metro-town{
+    position: relative;
+}
+.stars{
+    position: relative;
+}
+.stars:before{
+    content: url("../img/star.svg");
+    position: absolute;
+    top: -16px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+}
+.stars:after{
+    content: url("../img/star-big.svg");
+    position: absolute;
+    top: -7px;
+    left: 12px;
+    width: 24px;
+    height: 24px;
+}
+
+
+.first-business-name h3{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 5px;
+    text-transform: lowercase;
+    padding-left: 49px;
+}
+.first-business-name h4{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    text-transform: lowercase;
+    margin-left: 50px;
+}
+.btn-arrow{
+    width: 215px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    transition: 0.3s;
+}
+.icon-arrow-right{
+    content: "";
+    display: flex;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transition: 0.3s;
+    background-image: url(../img/arrow-right.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 154px;
+    height: 30px;
+}
+.btn-arrow-circle{
+    backdrop-filter: blur(16px);
+    background: #FFFFFF26;
+    max-width: 146px;
+    width: 100%;
+    height: 146px;
+    border-radius: 50%;
+    transition: 0.3s;
+
+}
+.first-business-name{
+    margin-top: 13px;
+    position: relative;
+    top: 8px;
+}
+
+
+
+@media (max-width: 1800px){
+    .container {
+        max-width: 1500px;
+    }
+
+    h1 {
+        font-size: 100px;
+    }
+    .first-business-name h3 {
+        font-size: 28px;
+    }
+    .first-business-name h4 {
+        font-size: 28px;
+        line-height: 130%;
+        margin-left: 30px;
+    }
+
+    .btn-arrow-circle {
+        max-width: 110px;
+        height: 110px;
+    }
+    .icon-arrow-right {
+        width: 105px;
+        height: 20px;
+    }
+    .btn-arrow {
+        width: 160px;
+    }
+    .first-business {
+        padding-top: 140px;
+        padding-bottom: 90px;
+    }
+
+}
+
+@media (max-width: 1600px){
+    h1 {
+        font-size: 80px;
+    }
+    .first-business-name h4 {
+        font-size: 24px;
+        line-height: 120%;
+    }
+    .first-business-name h3 {
+        font-size: 24px;
+    }
+    .tagilskaya-logo span{
+        height: 120px;
+    }
+    .tagilskaya-logo span svg {
+        height: 100%;
+    }
+    .tagilskaya-name img{
+        max-width: 480px;
+    }
+    .first-business {
+        padding-bottom: 55px;
+    }
+}
+
+@media (max-width: 1299px){
+    .btn-arrow{
+        display: none;
+    }
+    .tagilskaya-logo span {
+        height: 76px;
+    }
+    .tagilskaya-name {
+        margin-top: 26px;
+        margin-left: 197px;
+    }
+    .tagilskaya-name img {
+        max-width: 380px;
+    }
+}
+@media (max-width: 1020px){
+    .first-business-info{
+        width: 100%;
+    }
+    h1 {
+        font-size: 70px;
+    }
+    .first-business-name {
+        margin-top: 23px;
+        position: relative;
+        top: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+    .first-business {
+        padding-bottom: 28px;
+    }
+    .metro-town {
+        width: 100%;
+        padding-bottom: 72px;
+        border-bottom: 1px solid #FFFFFF80;
+    }
+    .first-business-name h4 {
+        margin-left: 0;
+    }
+}
+@media (max-width: 767px){
+    h1 {
+        font-size: 64px;
+    }
+
+    .home-main-active{
+        overflow: unset;
+        height: auto;
+    }
+    .first-business {
+        padding-top: 350px;
+        height: auto;
+    }
+}
+@media (max-width: 575px){
+    h1 {
+        font-size: 64px;
+    }
+    .home-main {
+        background-position: center;
+    }
+    .tagilskaya-logo span {
+        height: 56px;
+    }
+    .tagilskaya-logo {
+        gap: 11px;
+    }
+    .tagilskaya-name {
+        margin-top: 17px;
+        margin-left: 70px;
+    }
+    .tagilskaya-name img {
+        max-width: 240px;
+    }
+}
+@media (max-width: 410px){
+    h1 {
+        font-size: 54px;
+    }
+    .first-business-name h4 {
+        line-height: 140%;
+    }
+    .tagilskaya-name img {
+        max-width: 220px;
+    }
+}
+@media (max-width: 360px){
+    h1 {
+        font-size: 48px;
+    }
+    .first-business-name h4 {
+        font-size: 22px;
+    }
+    .first-business-name h3 {
+        font-size: 22px;
+    }
+}
