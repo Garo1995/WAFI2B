@@ -75,6 +75,9 @@ header{
     color: #FFFFFF;
     letter-spacing: 1.3px;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn:hover{
     background: #C49D76;

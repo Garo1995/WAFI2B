@@ -145,7 +145,6 @@ header{
 h1{
     font-weight: 400;
     font-size: 128px;
-    leading-trim: Cap height;
     line-height: 100%;
     text-transform: uppercase;
     color: #FFFFFF;
@@ -241,6 +240,575 @@ h1{
 }
 
 
+
+
+
+
+
+
+.slideLab-slider{
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+
+.business-center{
+    width: 100%;
+    background-image: url("../img/tagilskaya-fon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+}
+.business-center-mian{
+    padding-top: 227px;
+}
+
+
+.business-center-cnt{
+    max-width: 555px;
+    width: 100%;
+}
+.business-center-slider{
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+.business-center-bg{
+    width: 100%;
+    height: 454px;
+    padding: 30px 36px 36px;
+
+}
+.minutes-center{
+    margin-left: auto;
+    background: #46515D66;
+    backdrop-filter: blur(6px);
+    border-radius: 500px;
+    padding: 6px;
+    width: 182px;
+    gap: 6px;
+}
+.minutes-center span{
+    background: #FFFFFF;
+    max-width: 48px;
+    width: 100%;
+    height: 48px;
+    border-radius: 50%;
+    color: #C49D76;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+.minutes-center p{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+}
+
+.business-center-info h3{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+.business-center-info p{
+    margin-top: 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 155%;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+
+}
+
+.business-first{
+    margin-top: 20px;
+}
+.business-first h2{
+    font-family: 'Aeroport';
+    font-weight: 300;
+    font-size: 90px;
+    line-height: 100%;
+    color: #FFFFFF;
+}
+.business-first .metro-town{
+    margin-left: 100px;
+    margin-top: 25px;
+}
+
+
+.swiper-button-next:after, .swiper-button-prev:after{
+    display: none;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 36px;
+    width: 48px;
+    height: 48px;
+    margin-top: 0;
+    z-index: 10;
+    cursor: pointer;
+    background: #FFFFFF26;
+    border-radius: 50%;
+    transition: 0.3s;
+
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+    background: #FFFFFF;
+}
+
+.swiper-button-next svg, .swiper-button-prev svg{
+    transition: 0.3s;
+}
+.swiper-button-next:hover svg path, .swiper-button-prev:hover svg path{
+    fill: #46515D;
+}
+
+
+.swiper-button-prev{
+    left: 36px;
+}
+.swiper-button-next{
+    right: 0;
+    left: 108px;
+
+}
+
+
+.business-street{
+    margin-left: 24px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 451px;
+    width: 100%;
+    height: 628px;
+    padding: 36px;
+    display: flex;
+    align-items: start;
+    gap: 24px;
+    flex-direction: column;
+    justify-content: end;
+}
+.business-street h4{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    color: #FFFFFF;
+}
+
+
+.infrastructure-cnt{
+    max-width: 645px;
+    width: 100%;
+    margin-left: -9px;
+}
+.infrastructure-cnt h1{
+    font-family: "Aeroport";
+    font-weight: 300;
+    text-align: right;
+}
+.infrastructure-pic{
+    margin-top: 90px;
+    max-width: 432px;
+    width: 100%;
+}
+.infrastructure-pic img{
+    max-width: 432px;
+    width: 100%;
+}
+.infrastructure-pic{
+    display: flex;
+    flex-direction: column;
+}
+.infrastructure-pic h4{
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 55px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-top: -25px;
+    margin-left: 12px;
+}
+.infrastructure-pic p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 155%;
+    color: #FFFFFF;
+    margin-left: 175px;
+    margin-top: -25px;
+}
+.about-business{
+    margin-top: 72px;
+    padding: 34px 20px;
+    background: #46515D66;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.about-business p{
+    font-family: "Aeroport";
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF80;
+}
+
+
+
+
+.slideLab-slider .swiper-slide{
+    margin: 0!important;
+}
+
+.architecture-main{
+    height: 100vh;
+    padding-bottom: 73px;
+}
+
+.architecture-main:after{
+    content: "";
+    position: absolute;
+    top: 77px;
+    right: 340px;
+    background-image: url("../img/name-fon-w.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 739px;
+    width: 100%;
+    height: 800px;
+}
+.architecture-cnt{
+    max-width: 902px;
+    width: 100%;
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+.architecture-logo{
+    gap: 30px;
+}
+
+.architecture-flex{
+    margin-top: 90px;
+    position: relative;
+    gap: 95px 35px;
+}
+.architecture-flex:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+    top: 103px;
+    left: 0;
+    transform: rotate(180deg);
+}
+.architecture-info{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+.architecture-info:after{
+    content: "";
+    width: 1px;
+    height: 22px;
+    background: #FFFFFF0D;
+    position: absolute;
+    top: 8px;
+    right: -8px;
+}
+.architecture-info:nth-child(3):after,
+.architecture-info:nth-child(6):after{
+    display: none;
+}
+
+.architecture-info strong{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 28px;
+    text-align: left;
+}
+.architecture-info p{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: left;
+    color: #FFFFFF;
+    max-width: 175px;
+    width: 100%;
+}
+.supermarket-area{
+    margin-top: 120px;
+    gap: 75px;
+}
+
+.supermarket-area strong{
+    font-weight: 400;
+    font-size: 75px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.supermarket-area p{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 36px;
+    text-transform: uppercase;
+    max-width: 455px;
+    width: 100%;
+}
+
+.architecture-bulding{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+.architecture-cart{
+    max-width: 432px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+.architecture-photo{
+    width: 100%;
+    position: relative;
+}
+.architecture-arrow{
+    backdrop-filter: blur(6px);
+    background: #C49D76;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-radius: 50%;
+}
+.icon-arrow-top{
+    content: url("../img/arrow-top.svg");
+    width: 24px;
+    height: 24px;
+}
+
+.architecture-text{
+    background: #FFFFFFA6;
+    backdrop-filter: blur(15px);
+    padding: 36px 24px;
+
+}
+
+.architecture-text h3{
+    color: #46515D;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 110%;
+    text-transform: uppercase;
+
+}
+.architecture-text p{
+    margin-top: 24px;
+    color: #46515D;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 155%;
+
+}
+
+
+
+
+
+.great-option{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding-top: 227px;
+    padding-bottom: 72px;
+    position: relative;
+}
+.great-option:before{
+    content: "";
+    background: linear-gradient(180deg, #000000 -12.73%, rgba(0, 0, 0, 0) 41.15%);
+    width: 100%;
+    height: 373px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.great-option-box{
+    max-width: 146px;
+    width: 100%;
+    height: 146px;
+    border-radius: 50%;
+    backdrop-filter: blur(15px);
+    background: #FFFFFF59;
+    gap: 6px;
+    padding: 7px;
+}
+.great-option-box + .great-option-box{
+    margin-left: -9px;
+}
+.great-option-box span{
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+.great-option-box p{
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+
+}
+
+.great-option-act{
+    background: #C49D7699;
+    backdrop-filter: blur(16px);
+
+}
+.great-option-cnt{
+    margin-top: 226px;
+}
+.great-option-href{
+    position: relative;
+}
+.great-option-href h2{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 114%;
+    text-transform: uppercase;
+    margin-top: -19px;
+    margin-left: 12px;
+    position: relative;
+    z-index: 1;
+}
+.great-option-href{
+    max-width: 432px;
+    width: 100%;
+}
+.great-option-photo{
+    position: relative;
+}
+.great-option-photo:after{
+    content: "";
+    position: absolute;
+    left: -12px;
+    bottom: -12px;
+    width: 100%;
+    height: 169px;
+    background: #FFFFFF59;
+    backdrop-filter: blur(15px);
+
+}
+.great-option-info .metro-town{
+    margin-top: 15px;
+}
+.great-option-photo img{
+    position: relative;
+    z-index: 1;
+}
+.great-option-photo .architecture-arrow{
+    z-index: 1;
+    background: #C49D7659;
+    backdrop-filter: blur(6px);
+
+}
+.be-the-first{
+    gap: 48px;
+}
+.be-the-first h3{
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    max-width: 930px;
+    width: 100%;
+}
+.be-the-first-btn{
+    gap: 36px;
+    margin-top: 24px;
+}
+.be-the-first-btn .btn{
+    width: 308px;
+    height: 76px;
+    background: #C49D7699;
+    backdrop-filter: blur(15px);
+    font-size: 20px;
+}
+.btn-line{
+    background: #FFFFFF0D;
+    border: 1px solid #FFFFFF;
+    backdrop-filter: blur(15px);
+    width: 308px;
+    height: 76px;
+    padding: 24px 36px;
+    transition: 0.3s;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 1.3px;
+}
+
+
+.block-new{
+    position: relative;
+    padding-top: 220px;
+}
+.block-new-title{
+    position: relative;
+
+}
+.block-new-title .swiper-button-prev {
+    left: auto;
+    right: 75px;
+}
+.block-new-title .block-button-next {
+    left: auto;
+    right:0;
+}
+.block-new-slider{
+    margin-top: 60px;
+}
+.block-new-box{
+    max-width: 548px;
+    width: 100%;
+    gap: 16px;
+    margin: 0 auto;
+}
+.block-new-box h3{
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 44px;
+    color: #fff;
+}
+.block-new-box p{
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    vertical-align: bottom;
+}
 
 @media (max-width: 1800px){
     .container {
