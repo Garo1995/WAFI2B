@@ -21,14 +21,16 @@
     width: 100%;
     height: 100%;
     display: flex;
-    transition: 2.8s;
+    transition: 3.6s;
 }
 .tagilskaya-sec-img img{
-    transition: 2.8s;
+    transition: 3.6s;
     width: 100%;
 }
 .tagilskaya-act  .tagilskaya-sec-img img{
     transform: scale(1.6);
+    transition: 3.6s;
+
 }
 
 .home-main-active .tagilskaya-sec-img img{
@@ -307,7 +309,7 @@ h1{
     color: #FFFFFF;
     font-weight: 400;
     font-size: 14px;
-    line-height: 100%;
+    line-height: 116%;
 }
 
 .business-center-info h3{
@@ -576,13 +578,14 @@ h1{
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 1;
+    z-index: 999;
 }
 .architecture-cart{
     max-width: 432px;
     width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 999;
+
 }
 .architecture-photo{
     width: 100%;
@@ -597,6 +600,7 @@ h1{
     top: 12px;
     right: 12px;
     border-radius: 50%;
+    cursor: pointer;
 }
 .icon-arrow-top{
     content: url("../img/arrow-top.svg");
@@ -637,8 +641,10 @@ h1{
     background-repeat: no-repeat;
     height: 100vh;
     padding-top: 227px;
-    padding-bottom: 72px;
+    padding-bottom: 64px;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 .great-option:before{
     content: "";
@@ -796,6 +802,15 @@ h1{
     gap: 16px;
     margin: 0 auto;
 }
+.block-new-box a{
+    display: flex;
+    width: 100%;
+}
+.block-new-box img{
+    width: 100%;
+    object-fit: cover;
+    height: 346px;
+}
 .block-new-box h3{
     font-weight: 400;
     font-size: 28px;
@@ -810,162 +825,322 @@ h1{
     vertical-align: bottom;
 }
 
-@media (max-width: 1800px){
-    .container {
-        max-width: 1500px;
-    }
 
-    h1 {
-        font-size: 100px;
-    }
-    .first-business-name h3 {
-        font-size: 28px;
-    }
-    .first-business-name h4 {
-        font-size: 28px;
-        line-height: 130%;
-        margin-left: 30px;
-    }
 
-    .btn-arrow-circle {
-        max-width: 110px;
-        height: 110px;
-    }
-    .icon-arrow-right {
-        width: 105px;
-        height: 20px;
-    }
-    .btn-arrow {
-        width: 160px;
-    }
-    .first-business {
-        padding-top: 140px;
-        padding-bottom: 90px;
-    }
+
+
+
+.gallery-box{
+    background: #46515D;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    padding: 99px 0 48px;
+    transition: 1.5s;
+    transform: translateX(100%);
+}
+.gallery-box-active{
+    transform: translateX(0);
 
 }
-
-@media (max-width: 1600px){
-    h1 {
-        font-size: 80px;
-    }
-    .first-business-name h4 {
-        font-size: 24px;
-        line-height: 120%;
-    }
-    .first-business-name h3 {
-        font-size: 24px;
-    }
-    .tagilskaya-logo span{
-        height: 120px;
-    }
-    .tagilskaya-logo span svg {
-        height: 100%;
-    }
-    .tagilskaya-name img{
-        max-width: 480px;
-    }
-    .first-business {
-        padding-bottom: 55px;
-    }
+.gallery-box-title h2{
+    color: #FFFFFF;
+    font-family: "Aeroport";
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-align: left;
 }
 
-@media (max-width: 1299px){
-    .btn-arrow{
-        display: none;
-    }
-    .tagilskaya-logo span {
-        height: 76px;
-    }
-    .tagilskaya-name {
-        margin-top: 26px;
-        margin-left: 197px;
-    }
-    .tagilskaya-name img {
-        max-width: 380px;
-    }
+.go-back{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #FFFFFF;
 }
-@media (max-width: 1020px){
-    .first-business-info{
-        width: 100%;
-    }
-    h1 {
-        font-size: 70px;
-    }
-    .first-business-name {
-        margin-top: 23px;
-        position: relative;
-        top: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
-    }
-    .first-business {
-        padding-bottom: 28px;
-    }
-    .metro-town {
-        width: 100%;
-        padding-bottom: 72px;
-        border-bottom: 1px solid #FFFFFF80;
-    }
-    .first-business-name h4 {
-        margin-left: 0;
-    }
+.gallery-rel {
+    margin-top: 60px;
+    position: relative;
+    padding-bottom: 110px;
 }
-@media (max-width: 767px){
-    h1 {
-        font-size: 64px;
-    }
+.gallery-cnt{
+    max-width: 554px;
+    width: 100%;
+}
+.gallery-cnt a{
+    display: flex;
+    width: 100%;
+    height: 479px;
+}
+.gallery-cnt a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallery-cnt h4{
+    margin-top: 24px;
+    padding: 0 16px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 44px;
+    color: #FFFFFF;
+}
 
-    .home-main-active{
-        overflow: unset;
-        height: auto;
-    }
-    .first-business {
-        padding-top: 350px;
-        height: auto;
-    }
+
+.gallery-rel .swiper-button-prev, .gallery-rel .swiper-button-next{
+    width: 140px;
+    background: unset;
+    border-radius: 0;
+    top: auto;
+    bottom: 0;
 }
-@media (max-width: 575px){
-    h1 {
-        font-size: 64px;
-    }
-    .home-main {
-        background-position: center;
-    }
-    .tagilskaya-logo span {
-        height: 56px;
-    }
-    .tagilskaya-logo {
-        gap: 11px;
-    }
-    .tagilskaya-name {
-        margin-top: 17px;
-        margin-left: 70px;
-    }
-    .tagilskaya-name img {
-        max-width: 240px;
-    }
+.gallery-rel .swiper-button-prev{
+    left: 0;
+    right: auto;
 }
-@media (max-width: 410px){
-    h1 {
-        font-size: 54px;
-    }
-    .first-business-name h4 {
-        line-height: 140%;
-    }
-    .tagilskaya-name img {
-        max-width: 220px;
-    }
+.gallery-rel .swiper-button-next{
+    left: auto;
+    right: 0;
 }
-@media (max-width: 360px){
-    h1 {
-        font-size: 48px;
-    }
-    .first-business-name h4 {
-        font-size: 22px;
-    }
-    .first-business-name h3 {
-        font-size: 22px;
-    }
+
+
+.gallery-rel .swiper-button-prev span, .gallery-rel .swiper-button-next span{
+    backdrop-filter: blur(16px);
+    background: #FFFFFF0D;
+    max-width: 90px;
+    width: 100%;
+    height: 90px;
+    border-radius: 50%;
+    transition: 0.3s;
+    display: flex;
 }
+.gallery-rel .swiper-button-prev span{
+    margin-right: auto;
+}
+
+.gallery-rel .swiper-button-next span{
+    margin-left: auto;
+}
+
+.gallery-rel .swiper-button-prev img, .gallery-rel .swiper-button-next img{
+    position: absolute;
+    z-index: 2;
+}
+.gallery-rel .swiper-button-prev img{
+    right: 0;
+}
+
+.gallery-rel .swiper-button-next img{
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+.world-renowned{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+.world-renowned-cnt{
+    height: 100vh;
+}
+
+.world-renowned-info{
+    max-width: 870px;
+    width: 100%;
+}
+
+.world-renowned-rel{
+    position: relative;
+    max-width: 720px;
+    width: 100%;
+}
+.renowned-slider{
+    height: 100vh;
+}
+.renowned-slider .swiper-slide{
+    height: 292px!important;
+}
+.world-renowned-fl{
+    width: 100%;
+}
+.world-renowned-box{
+    max-width: 361px;
+    width: 100%;
+}
+.world-renowned-photo{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 292px;
+}
+
+.renowned-arrow{
+    border-radius: 50%;
+    max-width: 48px;
+    width: 100%;
+    height: 48px;
+    background: #C49D7659;
+    backdrop-filter: blur(6px);
+    position: absolute;
+    right: 12px;
+    top: 12px;
+}
+.world-renowned-tit{
+    margin-top: 18px;
+    padding: 0 12px;
+}
+.world-renowned-tit h4{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 155%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+}
+.world-renowned-tit p{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 155%;
+    margin-top: 12px;
+}
+.world-renowned-tit span{
+    color: #FFFFFF;
+    font-family: "Aeroport";
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 28px;
+}
+.world-renowned-href{
+    margin-left: auto;
+    margin-top: 35px;
+    gap: 5px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 155%;
+    width: max-content;
+    margin-right: 12px;
+}
+
+.block-contact-main .about-business {
+    bottom: -7px;
+    backdrop-filter: blur(15px);
+}
+.block-contact-cnt{
+    padding-top: 220px;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 100px;
+}
+
+.block-contact-info{
+    max-width: 1050px;
+    width: 100%;
+}
+.block-contact-fl{
+    gap: 20px;
+    justify-content: space-between;
+}
+.block-contact-name p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 1.3px;
+    color: #ffffff;
+}
+.block-contact-name span{
+    display: block;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 100%;
+    letter-spacing: 1.3px;
+    color: #ffffff;
+    margin-top: 24px;
+    white-space: nowrap;
+}
+.block-contact-info p{
+    margin-top: 48px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 155%;
+    color: #FFFFFFA6;
+}
+.scall-top{
+    max-width: 146px;
+    width: 100%;
+    height: 146px;
+    border-radius: 50%;
+    transition: 0.3s;
+    gap: 8px;
+    background: #FFFFFF26;
+    backdrop-filter: blur(15px);
+    padding: 12px;
+}
+.scall-top p{
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+}
+.block-contact-line{
+    background: #FFFFFF26;
+    width: 1px;
+    height: 10px;
+    margin: 0 15px 15px;
+}
+
+.contact-map{
+    width: 100%;
+    height: 450px;
+}
+.contact-map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+/*.anime-scroll{*/
+/*    transition: 2.0s;*/
+/*    transform: translateY(150px);*/
+/*    opacity: 0;*/
+/*}*/
+
+
+/*.swiper-slide{*/
+/*    transition: 2.0s;*/
+/*    */
+/*}*/
+
+/*.swiper-slide-active .anime-scroll{*/
+/*    transform: translateY(0);*/
+/*    transition: 2.0s;*/
+/*    opacity: 1;*/
+
+/*}*/
+
+
+
+
+
+
+
+
+

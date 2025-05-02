@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    $(".phone").mask('+7 (999)-999-99-99');
+});
+
+$(document).ready(function () {
     setTimeout(function () {
         $(".tagilskaya-sec").addClass("tagilskaya-act");
     }, 800);
@@ -31,19 +35,45 @@ $(document).ready(function () {
 
 
 
+
+
 let slideSwiper = new Swiper(".slideLab-slider", {
     direction: "vertical",
     slidesPerView: 1,
-    spaceBetween: 1,
     mousewheel: true,
     speed: 2000,
-
+    allowTouchMove: true,
 });
+
+const innerSwiper = new Swiper('.renowned-slider', {
+    direction: 'vertical',
+    nested: true,
+    mousewheel: true,
+    speed: 600,
+    slidesPerView: 3,
+
+    on: {
+        touchStart: () => {
+            slideSwiper.allowSlideNext = false;
+            slideSwiper.allowSlidePrev = false;
+        },
+        reachEnd: () => {
+            slideSwiper.allowSlideNext = true;
+        },
+        reachBeginning: () => {
+            slideSwiper.allowSlidePrev = true;
+        },
+        touchEnd: () => {
+            if (!innerSwiper.isBeginning) slideSwiper.allowSlidePrev = false;
+            if (!innerSwiper.isEnd) slideSwiper.allowSlideNext = false;
+        }
+    }
+});
+
 
 
 let businessSwiper = new Swiper(".business-center-slider", {
     slidesPerView: 1,
-    spaceBetween: 1,
     loop: true,
     navigation: {
         nextEl: ".business-button-next",
@@ -57,6 +87,16 @@ let blockSwiper = new Swiper(".block-new-slider", {
     navigation: {
         nextEl: ".block-button-next",
         prevEl: ".block-button-prev",
+    },
+});
+
+
+let gallerySwiper = new Swiper(".gallery-slider", {
+    slidesPerView: 3,
+    loop: true,
+    navigation: {
+        nextEl: ".gallery-button-next",
+        prevEl: ".gallery-button-prev",
     },
 });
 
@@ -108,6 +148,15 @@ $(window).on('click', function (event) {
 
 
 
+
+$('.open-gallery').on('click', function (){
+    $('.gallery-box').addClass('gallery-box-active')
+})
+
+
+$('.go-back').on('click', function (){
+    $('.gallery-box').removeClass('gallery-box-active')
+})
 
 
 
