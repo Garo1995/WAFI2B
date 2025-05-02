@@ -794,7 +794,7 @@ h1{
     right:0;
 }
 .block-new-slider{
-    margin-top: 60px;
+    margin-top: 45px;
 }
 .block-new-box{
     max-width: 548px;
@@ -811,17 +811,17 @@ h1{
     object-fit: cover;
     height: 346px;
 }
-.block-new-box h3{
+.block-new-box h3 {
     font-weight: 400;
     font-size: 28px;
-    line-height: 44px;
+    line-height: 36px;
     color: #fff;
 }
 .block-new-box p{
     color: #fff;
     font-weight: 400;
     font-size: 14px;
-    line-height: 28px;
+    line-height: 24px;
     vertical-align: bottom;
 }
 
@@ -953,16 +953,19 @@ h1{
 }
 .world-renowned-cnt{
     height: 100vh;
+    position: relative;
 }
 
 .world-renowned-info{
     max-width: 870px;
     width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
 }
 
 .world-renowned-rel{
     position: relative;
-    max-width: 720px;
     width: 100%;
 }
 .renowned-slider{
@@ -973,6 +976,8 @@ h1{
 }
 .world-renowned-fl{
     width: 100%;
+    max-width: 720px;
+    margin-left: auto;
 }
 .world-renowned-box{
     max-width: 361px;
