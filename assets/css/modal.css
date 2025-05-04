@@ -89,9 +89,8 @@
     width: 100%;
     position: relative;
     height: 100%;
-    padding: 120px 20px 60px;
-    display: flex
-;
+    padding: 30px 20px 60px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -128,7 +127,7 @@
 .clicking-submit-inp{
     max-width: 826px;
     width: 100%;
-    margin: 38px auto 0;
+    margin: 20px auto 0;
 }
 
 .modal-inp{
@@ -198,4 +197,84 @@
     margin-top: 70px;
     max-width: 479px;
     width: 100%;
+}
+
+@media (max-width: 1599px){
+    .close {
+        top: 30px;
+        right: 30px;
+    }
+    .clicking-submit-form h4 {
+        font-size: 22px;
+        line-height: 128%;
+        max-width: 500px;
+        margin-top: 22px;
+    }
+    .clicking-submit-inp {
+        max-width: 550px;
+        margin: 10px auto 0;
+    }
+    .modal-inp input {
+        padding: 15px 15px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .modal-inp {
+        margin-top: 15px;
+    }
+    .clicking-submit-form .btn {
+        margin-top: 35px;
+        font-size: 20px;
+        height: 66px;
+    }
+    .clicking-submit {
+        padding: 20px 16px 20px;
+    }
+    .modal-registration:before {
+        max-width: 700px;
+    }
+
+
+
+
+}
+@media (max-width: 767px){
+    .clicking-submit-form{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .clicking-submit-form h4 {
+        font-size: 18px;
+        line-height: 125%;
+        max-width: 400px;
+        margin-top: 22px;
+        text-align: left;
+    }
+
+
+    .modal-inp input {
+        padding: 15px 0;
+        font-size: 24px;
+        line-height: 26px;
+        text-align: left;
+    }
+    .clicking-submit {
+        padding: 0;
+        backdrop-filter: unset;
+        background: unset;
+        position: relative;
+        margin-top: 12px;
+    }
+    #modal-thanks   .clicking-submit-form h4{
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+
 }

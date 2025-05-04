@@ -38,7 +38,7 @@
         $mail->setFrom('hovhannisyans2021@yandex.com', 'New Mail'); // ????? ????? ????? ? ??? ???????????
     
     // ���������� ������
-        $mail->addAddress('obojealexander@gmail.com');
+        $mail->addAddress('sales.ds@ya.ru');
 
     // �������� ���������
         $mail->isHTML(true);

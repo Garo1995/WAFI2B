@@ -1,6 +1,6 @@
 
 header{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -63,7 +63,9 @@ header{
     opacity: 1;
 
 }
-
+.mobile-menu li:nth-child(4){
+    display: none;
+}
 
 .btn{
     transition: 0.3s;
@@ -166,7 +168,7 @@ header{
         padding: 16px 24px;
     }
     .mobile-menu ul {
-        gap: 20px;
+        gap: 27px;
     }
     .header-menu {
         gap: 35px;
@@ -177,7 +179,7 @@ header{
 }
 @media (max-width: 1299px) {
     .header-main {
-        padding: 40px 0 30px;
+        padding: 15px 0 15px;
     }
 
     .open-menu{
@@ -208,7 +210,7 @@ header{
         top: 0;
         right: 0;
         transition: 0.9s;
-        height: 100%;
+        height: 100vh;
         overflow: hidden;
         background-image: url("../img/tagilskaya-fon.png");
         background-size: cover;
@@ -232,7 +234,7 @@ header{
     .mobile-menu li:after{
         display: none;
     }
-    .btn {
+   header .btn {
         padding: 24px 36px;
         position: absolute;
         bottom: 24px;
@@ -249,11 +251,15 @@ header{
         top: 0;
         left: 16px;
         width: calc(100% - 32px);
-        padding: 48px 0 36px;
+        padding: 24px 0 24px;
+    }
+
+    .mobile-menu {
+        margin-bottom: 15px;
     }
 }
 @media (max-width: 767px){
-    .btn {
+   header  .btn {
         padding: 18px 24px;
         bottom: 20px;
     }
@@ -268,7 +274,7 @@ header{
     }
 }
 @media (max-width: 410px){
-    .btn {
+    header  .btn {
         max-width: 315px;
         width: 100%;
     }

@@ -33,7 +33,10 @@ $(document).ready(function () {
 });
 
 
-
+$('.menu li').on('click', function () {
+    $('.menu li').removeClass('active-menu');
+    $(this).addClass('active-menu');
+})
 
 
 
@@ -41,9 +44,19 @@ let slideSwiper = new Swiper(".slideLab-slider", {
     direction: "vertical",
     slidesPerView: 1,
     mousewheel: true,
-    speed: 2000,
+    speed: 1600,
     allowTouchMove: true,
 });
+
+
+document.querySelectorAll('[data-slide]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const slideIndex = parseInt(this.getAttribute('data-slide'));
+        slideSwiper.slideTo(slideIndex);
+    });
+});
+
 
 const innerSwiper = new Swiper('.renowned-slider', {
     direction: 'vertical',
@@ -51,7 +64,6 @@ const innerSwiper = new Swiper('.renowned-slider', {
     mousewheel: true,
     speed: 600,
     slidesPerView: 3,
-
     on: {
         touchStart: () => {
             slideSwiper.allowSlideNext = false;
@@ -67,7 +79,9 @@ const innerSwiper = new Swiper('.renowned-slider', {
             if (!innerSwiper.isBeginning) slideSwiper.allowSlidePrev = false;
             if (!innerSwiper.isEnd) slideSwiper.allowSlideNext = false;
         }
-    }
+    },
+
+
 });
 
 
@@ -84,6 +98,8 @@ let businessSwiper = new Swiper(".business-center-slider", {
 let blockSwiper = new Swiper(".block-new-slider", {
     slidesPerView: 3,
     loop: true,
+    spaceBetween: 24,
+
     navigation: {
         nextEl: ".block-button-next",
         prevEl: ".block-button-prev",
@@ -93,6 +109,8 @@ let blockSwiper = new Swiper(".block-new-slider", {
 
 let gallerySwiper = new Swiper(".gallery-slider", {
     slidesPerView: 3,
+    spaceBetween: 24,
+
     loop: true,
     navigation: {
         nextEl: ".gallery-button-next",
@@ -158,5 +176,23 @@ $('.go-back').on('click', function (){
     $('.gallery-box').removeClass('gallery-box-active')
 })
 
+
+
+
+
+$('.see-more').on('click', function (){
+    $('.more-black-new').toggleClass('more-black-new-active')
+})
+
+
+
+
+
+$(document).ready(function () {
+    $('.world-renowned-photo').on('click', function () {
+        const bg = $(this).css('background-image');
+        $('.world-renowned').css('background-image', bg);
+    });
+});
 
 

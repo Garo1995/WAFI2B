@@ -203,6 +203,16 @@ h1{
     line-height: 150%;
     text-transform: lowercase;
     margin-left: 50px;
+    position: relative;
+}
+.first-business-name h4:before{
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: -30px;
+    width: 1px;
+    height: 12px;
+    background: #FFFFFF80;
 }
 .btn-arrow{
     width: 215px;
@@ -225,6 +235,9 @@ h1{
     width: 154px;
     height: 30px;
 }
+.btn-arrow:hover .icon-arrow-right{
+    left: 20px;
+}
 .btn-arrow-circle{
     backdrop-filter: blur(16px);
     background: #FFFFFF26;
@@ -234,6 +247,9 @@ h1{
     border-radius: 50%;
     transition: 0.3s;
 
+}
+.btn-arrow:hover .btn-arrow-circle{
+    background: #FFFFFF59;
 }
 .first-business-name{
     margin-top: 13px;
@@ -468,10 +484,6 @@ h1{
 
 
 
-.slideLab-slider .swiper-slide{
-    margin: 0!important;
-}
-
 .architecture-main{
     height: 100vh;
     padding-bottom: 73px;
@@ -494,7 +506,7 @@ h1{
     width: 100%;
     padding-bottom: 50px;
     position: relative;
-    z-index: 1;
+    z-index: 9999;
 }
 .architecture-logo{
     gap: 30px;
@@ -579,6 +591,7 @@ h1{
     bottom: 0;
     right: 0;
     z-index: 999;
+    height: 94%;
 }
 .architecture-cart{
     max-width: 432px;
@@ -740,6 +753,7 @@ h1{
 .be-the-first{
     gap: 48px;
 }
+
 .be-the-first h3{
     font-weight: 400;
     font-size: 36px;
@@ -755,7 +769,8 @@ h1{
     margin-top: 24px;
 }
 .be-the-first-btn .btn{
-    width: 308px;
+    width: 320px;
+    white-space: nowrap;
     height: 76px;
     background: #C49D7699;
     backdrop-filter: blur(15px);
@@ -765,7 +780,6 @@ h1{
     background: #FFFFFF0D;
     border: 1px solid #FFFFFF;
     backdrop-filter: blur(15px);
-    width: 308px;
     height: 76px;
     padding: 24px 36px;
     transition: 0.3s;
@@ -774,6 +788,11 @@ h1{
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 1.3px;
+    width: max-content;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -802,10 +821,7 @@ h1{
     gap: 16px;
     margin: 0 auto;
 }
-.block-new-box a{
-    display: flex;
-    width: 100%;
-}
+
 .block-new-box img{
     width: 100%;
     object-fit: cover;
@@ -897,7 +913,9 @@ h1{
     border-radius: 0;
     top: auto;
     bottom: 0;
+    transition: 0.3s;
 }
+
 .gallery-rel .swiper-button-prev{
     left: 0;
     right: auto;
@@ -917,6 +935,10 @@ h1{
     border-radius: 50%;
     transition: 0.3s;
     display: flex;
+}
+.gallery-rel .swiper-button-prev:hover span, .gallery-rel .swiper-button-next:hover span{
+    background: #FFFFFF59;
+
 }
 .gallery-rel .swiper-button-prev span{
     margin-right: auto;
@@ -951,6 +973,19 @@ h1{
     background-size: cover;
     width: 100%;
 }
+.world-renowned:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.world-renowned .container{
+    position: relative;
+    z-index: 1;
+}
 .world-renowned-cnt{
     height: 100vh;
     position: relative;
@@ -971,9 +1006,7 @@ h1{
 .renowned-slider{
     height: 100vh;
 }
-.renowned-slider .swiper-slide{
-    height: 292px!important;
-}
+
 .world-renowned-fl{
     width: 100%;
     max-width: 720px;
@@ -989,6 +1022,7 @@ h1{
     background-size: cover;
     width: 100%;
     height: 292px;
+    cursor: pointer;
 }
 
 .renowned-arrow{
@@ -1056,8 +1090,7 @@ h1{
     width: 100%;
 }
 .block-contact-fl{
-    gap: 20px;
-    justify-content: space-between;
+    gap: 25px;
 }
 .block-contact-name p{
     font-weight: 400;
@@ -1076,7 +1109,7 @@ h1{
     margin-top: 24px;
     white-space: nowrap;
 }
-.block-contact-info p{
+.block-contact-info>p{
     margin-top: 48px;
     font-weight: 400;
     font-size: 28px;
@@ -1094,13 +1127,29 @@ h1{
     backdrop-filter: blur(15px);
     padding: 12px;
 }
+.scall-top:hover{
+    background: #FFFFFF;
+}
 .scall-top p{
     text-align: center;
     color: #FFFFFF;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
+    transition: 0.3s;
 
+}
+.scall-top svg {
+    transition: 0.3s;
+}
+.scall-top svg path{
+    transition: 0.3s;
+}
+.scall-top:hover svg path{
+    fill: #46515D;
+}
+.scall-top:hover p{
+    color: #46515D;
 }
 .block-contact-line{
     background: #FFFFFF26;
@@ -1118,34 +1167,327 @@ h1{
     height: 100%;
 }
 
+.home-page-mobile{
+    display: none;
+}
+.gallery-mobile{
+    display: none;
+}
+
+.all-block-mob{
+    display: none;
+}
+
+
+@media (min-height: 1024px) {
+    .business-center-mian {
+        height: 100vh;
+        display: flex ;
+        align-items: center;
+    }
+    .architecture-main {
+        align-items: center;
+    }
+
+}
+@media (min-height: 901px) and (max-height: 980px){
+    .header-main {
+        padding: 20px 0;
+    }
+    .mobile-menu li:after {
+        bottom: -44px;
+    }
+    .first-business {
+        padding-top: 180px;
+        padding-bottom: 70px;
+    }
+    .business-center-mian {
+        padding-top: 172px;
+    }
+    h1 {
+        font-size: 100px;
+    }
+    .great-option {
+        padding-top: 130px;
+        padding-bottom: 40px;
+    }
+    .block-new {
+        padding-top: 160px;
+    }
+
+    .block-contact-cnt {
+        padding-top: 150px;
+        padding-bottom: 50px;
+    }
+    .gallery-box {
+        padding: 50px 0 40px;
+    }
+
+}
+
+@media (min-height: 800px) and (max-height: 900px){
+    .header-main {
+        padding: 20px 0;
+    }
+    .mobile-menu li:after {
+        bottom: -44px;
+    }
+    .first-business-name h4:before {
+        top: 17px;
+    }
+    .first-business {
+        padding-top: 180px;
+        padding-bottom: 70px;
+    }
+    .business-center-mian {
+        padding-top: 168px;
+    }
+    h1 {
+        font-size: 80px;
+    }
+    .business-first h2 {
+        font-size: 75px;
+    }
+    .business-street {
+        max-width: 400px;
+        height: 520px;
+        padding: 22px;
+    }
+    .infrastructure-pic {
+        margin-top: 18px;
+    }
+    .business-center-bg {
+        height: 401px;
+        padding: 20px 20px 20px;
+    }
+    .about-business {
+        padding: 20px 20px;
+    }
+    .architecture-main {
+        padding-bottom: 40px;
+    }
+    .supermarket-area {
+        margin-top: 50px;
+        gap: 50px;
+    }
+    .architecture-cnt {
+        padding-bottom: 22px;
+    }
+    .business-first {
+        margin-top: 4px;
+    }
+    .architecture-flex {
+        margin-top: 61px;
+        gap: 60px 35px;
+    }
+    .architecture-flex:after {
+        top: 78px;
+    }
+    .architecture-text {
+        padding: 24px 24px;
+    }
+    .great-option-cnt {
+        margin-top: 140px;
+    }
+
+    .great-option {
+        padding-top: 125px;
+    }
+    .be-the-first {
+        gap: 25px;
+    }
+    .first-business-name h4 {
+        font-size: 30px;
+        line-height: 130%;
+    }
+    .block-new {
+        padding-top: 166px;
+    }
+    .block-new-box h3 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .block-new-box img {
+        height: 285px;
+    }
+    .block-new-box p {
+        line-height: 22px;
+    }
+    .block-new-slider {
+        margin-top: 30px;
+    }
+    .clicking-submit-form h4 {
+        font-size: 26px;
+        line-height: 130%;
+        max-width: 550px;
+        margin-top: 24px;
+    }
+    .modal-inp input {
+        padding: 15px 15px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .clicking-submit-form .btn {
+        margin-top: 40px;
+        font-size: 22px;
+        line-height: 100%;
+        height: 77px;
+    }
+    .block-contact-cnt {
+        padding-top: 120px;
+        padding-bottom: 40px;
+    }
+    .gallery-box {
+        padding: 40px 0 30px;
+    }
+    .gallery-rel {
+        margin-top: 30px;
+        padding-bottom: 92px;
+    }
+    .gallery-cnt a {
+        height: 410px;
+    }
 
 
 
 
-/*.anime-scroll{*/
-/*    transition: 2.0s;*/
-/*    transform: translateY(150px);*/
-/*    opacity: 0;*/
-/*}*/
-
-
-/*.swiper-slide{*/
-/*    transition: 2.0s;*/
-/*    */
-/*}*/
-
-/*.swiper-slide-active .anime-scroll{*/
-/*    transform: translateY(0);*/
-/*    transition: 2.0s;*/
-/*    opacity: 1;*/
-
-/*}*/
 
 
 
+}
 
+@media (min-height: 600px) and (max-height: 799px){
+    .header-main {
+        padding: 15px 0;
+    }
+    .mobile-menu li:after {
+        bottom: -31px;
+    }
+    .first-business {
+        padding-top: 140px;
+        padding-bottom: 50px;
+    }
+    .business-center-mian {
+        padding-top: 140px;
+    }
+    h1 {
+        font-size: 70px;
+    }
+    .business-first h2 {
+        font-size: 65px;
+    }
+    .business-street {
+        max-width: 400px;
+        height: 520px;
+        padding: 22px;
+    }
+    .infrastructure-pic h4 {
+        font-size: 30px;
+        line-height: 38px;
+        max-width: 223px;
+        width: 100%;
+    }
+    .infrastructure-pic {
+        margin-top: 18px;
+    }
+    .business-center-bg {
+        height: 401px;
+        padding: 20px 20px 20px;
+    }
+    .about-business {
+        padding: 20px 20px;
+    }
+    .architecture-main {
+        padding-bottom: 40px;
+    }
+    .supermarket-area {
+        margin-top: 50px;
+        gap: 50px;
+    }
+    .architecture-cnt {
+        padding-bottom: 22px;
+    }
+    .business-first {
+        margin-top: 4px;
+    }
+    .architecture-flex {
+        margin-top: 61px;
+        gap: 60px 35px;
+    }
+    .architecture-flex:after {
+        top: 78px;
+    }
+    .architecture-text {
+        padding: 24px 24px;
+    }
+    .great-option-cnt {
+        margin-top: 140px;
+    }
 
-
-
-
-
+    .great-option {
+        padding-top: 125px;
+    }
+    .be-the-first {
+        gap: 25px;
+    }
+    .first-business-name h4 {
+        font-size: 30px;
+        line-height: 130%;
+    }
+    .block-new {
+        padding-top: 166px;
+    }
+    .block-new-box h3 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .block-new-box img {
+        height: 285px;
+    }
+    .block-new-box p {
+        line-height: 22px;
+    }
+    .block-new-slider {
+        margin-top: 30px;
+    }
+    .clicking-submit-form h4 {
+        font-size: 26px;
+        line-height: 130%;
+        max-width: 550px;
+        margin-top: 24px;
+    }
+    .modal-inp input {
+        padding: 15px 15px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .clicking-submit-form .btn {
+        margin-top: 40px;
+        font-size: 22px;
+        line-height: 100%;
+        height: 77px;
+    }
+    .block-contact-cnt {
+        padding-top: 120px;
+        padding-bottom: 40px;
+    }
+    .gallery-box {
+        padding: 40px 0 30px;
+    }
+    .gallery-rel {
+        margin-top: 30px;
+        padding-bottom: 92px;
+    }
+    .gallery-cnt a {
+        height: 410px;
+    }
+    .business-center-bg {
+        height: 329px;
+    }
+    .business-street {
+        max-width: 330px;
+        height: 443px;
+        padding: 20px;
+        gap: 8px;
+    }
+}
