@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>
-    <header>
+    <header class="header">
         <div class="container">
             <div class="header-main G-align-center G-justify-between">
                 <a href="#" class="logo G-flex">
@@ -112,7 +112,7 @@
                                         <h4>Уникальное пространство для бизнеса</h4>
                                     </div>
                                 </div>
-                                <a href="#" class="btn-arrow">
+                                <a href="#" data-slide="1" class="btn-arrow">
                                     <i class="icon-arrow-right"></i>
                                     <span class="btn-arrow-circle"></span>
                                 </a>
@@ -219,9 +219,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="about-business G-center">
+                        <a href="#" data-slide="2" class="about-business G-center">
                             <p>Узнать больше о бизнесс центре</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -276,9 +276,6 @@
                                     <div class="architecture-cart">
                                         <div class="architecture-photo G-flex">
                                             <img src="./assets/img/architecture.png" alt="architecture">
-                                            <span class="architecture-arrow G-center">
-                                            <i class="icon-arrow-top"></i>
-                                        </span>
                                         </div>
                                         <div class="architecture-text">
                                             <h3>архитектура</h3>
@@ -442,7 +439,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide " data-hide-header="true">
                     <div class="world-renowned" style="background-image: url('./assets/img/afi.jpg')">
                         <div class="container">
                             <div class="world-renowned-cnt G-align-center G-justify-between">
@@ -962,9 +959,6 @@
                         <div class="architecture-cart">
                             <div class="architecture-photo G-flex">
                                 <img src="./assets/img/architecture.png" alt="architecture">
-                                <span class="architecture-arrow G-center">
-                                            <i class="icon-arrow-top"></i>
-                                        </span>
                             </div>
                             <div class="architecture-text">
                                 <h3>архитектура</h3>
@@ -1425,8 +1419,7 @@
                         </div>
                         <div class="modal-inp">
                             <label>
-                                <input type="text" id="tel" name='tel' placeholder="Ваш номер телефона"
-                                       pattern="\+7 \(\d{3}\)-\d{3}-\d{2}-\d{2}" class="phone">
+                                <input type="text" id="tel" name='tel' placeholder="Ваш номер телефона" class="phone">
                             </label>
                         </div>
                         <button type="submit" data-val="modal-thanks" class="open_modal btn close-this">Отправить
@@ -1437,9 +1430,10 @@
                 </form>
             </div>
             <div class="clicking-submit G-center">
-                <p>Нажимая на кнопку <span>“Оставить заявку”</span> я соглашаюсь с <a href="#">политикой обработки
+                <p>Нажимая на кнопку <span>“Оставить заявку”</span> я соглашаюсь с <a href="./assets/img/wb.pdf" target="_blank">политикой обработки
                     персональных
                     данных</a></p>
+
             </div>
         </div>
     </div>
@@ -1458,6 +1452,7 @@
         </div>
     </div>
 </div>
+
 
 <script src="assets/js/jquery-3.6.4.js"></script>
 <script src="assets/js/jquery.fancybox.js"></script>

@@ -119,11 +119,21 @@
 }
 header{
     transform: translateY(-100%);
-    transition: 3.0s;
+    transition: 2.0s;
 }
 .home-main-active header{
     transform: translateY(0);
 }
+
+
+.home-main-active .hide-header {
+    transform: translateY(-100%);
+    transition: 2.0s;
+}
+
+
+
+
 
 .home-main:before{
     content: "";
@@ -658,6 +668,7 @@ h1{
     position: relative;
     display: flex;
     align-items: center;
+    transition: 1.8s;
 }
 .great-option:before{
     content: "";
@@ -667,8 +678,14 @@ h1{
     position: absolute;
     top: 0;
     left: 0;
+    transform: translateY(-400%);
+    transition: 1.8s;
+    opacity: 0;
 }
-
+.swiper-slide-active .great-option:before{
+    transform: translateY(0);
+    opacity: 1;
+}
 .great-option-box{
     max-width: 146px;
     width: 100%;
@@ -951,13 +968,20 @@ h1{
 .gallery-rel .swiper-button-prev img, .gallery-rel .swiper-button-next img{
     position: absolute;
     z-index: 2;
+    transition: 0.3s;
 }
 .gallery-rel .swiper-button-prev img{
-    right: 0;
+    right: 0
+}
+.gallery-rel .swiper-button-prev:hover img{
+    right: 15px
 }
 
 .gallery-rel .swiper-button-next img{
     left: 0;
+}
+.gallery-rel .swiper-button-next:hover img{
+    left: 15px;
 }
 
 
@@ -972,6 +996,7 @@ h1{
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    position: relative;
 }
 .world-renowned:before{
     content: "";
@@ -1115,6 +1140,8 @@ h1{
     font-size: 28px;
     line-height: 155%;
     color: #FFFFFFA6;
+    max-width: 840px;
+    width: 100%;
 }
 .scall-top{
     max-width: 146px;
@@ -1155,12 +1182,12 @@ h1{
     background: #FFFFFF26;
     width: 1px;
     height: 10px;
-    margin: 0 15px 15px;
+    margin: 0 15px 10px;
 }
 
 .contact-map{
     width: 100%;
-    height: 450px;
+    height: 480px;
 }
 .contact-map iframe{
     width: 100%;
@@ -1361,7 +1388,7 @@ h1{
         padding: 15px 0;
     }
     .mobile-menu li:after {
-        bottom: -31px;
+        bottom: -39px;
     }
     .first-business {
         padding-top: 140px;

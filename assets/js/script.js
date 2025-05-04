@@ -46,6 +46,21 @@ let slideSwiper = new Swiper(".slideLab-slider", {
     mousewheel: true,
     speed: 1600,
     allowTouchMove: true,
+    on: {
+        slideChange: function () {
+            // Получаем активный слайд
+            const activeSlide = this.slides[this.activeIndex];
+
+            // Проверяем, есть ли у слайда атрибут data-hide-header
+            const shouldHideHeader = activeSlide.getAttribute("data-hide-header") === "true";
+
+            if (shouldHideHeader) {
+                $(".header").addClass("hide-header");
+            } else {
+                $(".header").removeClass("hide-header");
+            }
+        }
+    }
 });
 
 
@@ -196,3 +211,22 @@ $(document).ready(function () {
 });
 
 
+
+
+$(document).ready(function () {
+    // При фокусе убираем placeholder, при потере — возвращаем если поле пустое
+    $('input').each(function () {
+        const $input = $(this);
+        const placeholderText = $input.attr('placeholder');
+
+        $input.on('focus', function () {
+            $input.attr('placeholder', '');
+        });
+
+        $input.on('blur', function () {
+            if (!$input.val()) {
+                $input.attr('placeholder', placeholderText);
+            }
+        });
+    });
+});
