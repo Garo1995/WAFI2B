@@ -4,7 +4,11 @@
 
 
 
-
+@media (max-width: 1890px){
+    .world-renowned-photo {
+        height: 287px;
+    }
+}
 
 
 
@@ -96,7 +100,7 @@
         max-width: 820px;
     }
     .world-renowned-photo {
-        height: 240px;
+        height: 283px;
     }
     .world-renowned-fl {
         max-width: 624px;
@@ -138,6 +142,10 @@
         font-size: 20px;
         line-height: 29px;
         margin-top: 22px;
+    }
+    .entered-output {
+        padding: 117px 25px 56px 23px;
+        margin-top: -7px;
     }
 }
 @media (max-width: 1399px){
@@ -228,9 +236,7 @@
         width: 19px;
         height: 19px;
     }
-    .world-renowned-photo {
-        height: 220px;
-    }
+
     .world-renowned-tit p {
         line-height: 120%;
         margin-top: 2px;
@@ -249,9 +255,7 @@
     .world-renowned-tit {
         margin-top: 8px;
     }
-    .world-renowned-photo {
-        height: 200px;
-    }
+
     .block-contact-line {
         margin: 0 15px 6px;
     }
@@ -321,8 +325,14 @@
         height: 80px;
     }
     .entered-output {
-        padding: 90px 28px 40px 23px;
+        padding: 70px 28px 34px 23px;
+        margin-top: -10px;
     }
+    .entered-output {
+        padding: 117px 25px 56px 23px;
+        margin-top: -2px;
+    }
+
 
 }
 @media (max-width: 1299px){
@@ -501,6 +511,9 @@
     .block-new-box h3 {
         font-size: 18px;
         line-height: 24px;
+    }
+    .entered-output {
+        padding: 114px 28px 53px 23px;
     }
 }
 @media (max-width: 1025px){
@@ -799,7 +812,7 @@
     .world-renowned-fl {
         max-width: 100%;
         margin: 50px 0 0;
-
+        height: auto;
     }
     .world-renowned-box {
         max-width: 50%;
@@ -931,6 +944,7 @@
     }
     .entered-output {
         padding: 57px 21px 27px 18px;
+        margin-top: 0px;
     }
     .world-renowned-marg{
         margin: 0;
@@ -1091,6 +1105,11 @@
     .world-renowned-fl {
         margin: 0 0 -56px;
     }
+    .first-business-name h3 {
+        letter-spacing: 3px;
+    }
+
+
 
 }
 @media (max-width: 410px){

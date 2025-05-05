@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $(".phone").mask('+7 (999)-999-99-99');
+
 });
 
 $(document).ready(function () {
@@ -64,6 +65,16 @@ let slideSwiper = new Swiper(".slideLab-slider", {
 });
 
 
+document.querySelector('header').addEventListener('wheel', function(e) {
+    // Создаем новое событие
+    let newEvent = new WheelEvent("wheel", e);
+    // Отправляем его в swiper container
+    document.querySelector('.slideLab-slider').dispatchEvent(newEvent);
+});
+
+
+
+
 document.querySelectorAll('[data-slide]').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -96,6 +107,25 @@ const innerSwiper = new Swiper('.renowned-slider', {
         }
     },
 
+    breakpoints: {
+
+        '2880': {
+            slidesPerView: 4,
+            slidesPerGroup: 1,
+        },
+        '1940': {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+        },
+        '1600': {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+        },
+        '320': {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+        },
+    },
 
 });
 
