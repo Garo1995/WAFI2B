@@ -131,7 +131,14 @@
         font-size: 55px;
     }
 
-
+    .entered-output strong {
+        font-size: 50px;
+    }
+    .entered-output p {
+        font-size: 20px;
+        line-height: 29px;
+        margin-top: 22px;
+    }
 }
 @media (max-width: 1399px){
     .business-center-bg {
@@ -312,6 +319,9 @@
     .gallery-rel .swiper-button-prev span, .gallery-rel .swiper-button-next span {
         max-width: 80px;
         height: 80px;
+    }
+    .entered-output {
+        padding: 90px 28px 40px 23px;
     }
 
 }
@@ -510,9 +520,10 @@
     .home-page-mobile{
         display: block;
     }
-    .home-page{
-        height: auto;
+
+    .home-main-active{
         overflow: unset;
+        height: auto;
     }
     .home-main:before {
         height: 260px;
@@ -637,12 +648,12 @@
         left: 0;
         width: 100%;
         bottom: 0;
-        z-index: 11;
         backdrop-filter: blur(15px);
         background: #FFFFFF;
         padding: 19px 35px;
         flex-direction: column;
         align-items: flex-start;
+        z-index: 999;
     }
     .supermarket-area strong {
         font-weight: 400;
@@ -857,8 +868,32 @@
     .gallery-cnt {
         max-width: 100%;
     }
-    .world-renowned-scr{
+    .world-renowned-fon{
         margin-top: 65px;
+        position: relative;
+    }
+    .world-renowned-fon:before{
+        content: "";
+        background: linear-gradient(180deg, #000000 -12.73%, rgba(0, 0, 0, 0) 41.15%);
+        width: calc(100% + 16px);
+        height: 70px;
+        position: absolute;
+        top: 0;
+        left: -16px;
+        z-index: 2;
+    }
+    .world-renowned-fon:after{
+        content: "";
+        background: linear-gradient(180deg, #000000 -12.73%, rgba(0, 0, 0, 0) 41.15%);
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        transform: rotate(180deg);
+    }
+    .world-renowned-scr{
         overflow-y: scroll;
     }
 
@@ -886,10 +921,23 @@
         top: 75px;
     }
 
-
-
-
-
+    .entered-output strong {
+        font-size: 36px;
+    }
+    .entered-output p {
+        font-size: 16px;
+        line-height: 25px;
+        margin-top: 33px;
+    }
+    .entered-output {
+        padding: 57px 21px 27px 18px;
+    }
+    .world-renowned-marg{
+        margin: 0;
+    }
+    .architecture-cnt {
+        z-index: 99;
+    }
 
 }
 @media (max-width: 767px){
@@ -897,10 +945,7 @@
         font-size: 64px;
     }
 
-    .home-main-active{
-        overflow: unset;
-        height: auto;
-    }
+
     .first-business {
         padding-top: 350px;
     }
@@ -986,10 +1031,16 @@
     }
 
     .business-first .metro-town {
-        margin-left: 28px;
+        margin-left: 0;
+        width: 100%;
+        padding-left: 20px;
     }
-
-
+    .be-the-first h3 {
+        max-width: 440px;
+    }
+    .be-the-first {
+        align-items: flex-start;
+    }
 
 
 

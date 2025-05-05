@@ -1206,6 +1206,54 @@ h1{
 }
 
 
+
+.entered-output{
+    backdrop-filter: blur(15px);
+    background: #FFFFFF26;
+    padding: 123px 28px 37px 23px;
+    border-right: 8px solid #FFFFFF;
+    position: relative;
+}
+.left-border{
+    border-right: unset;
+    border-left: 8px solid #FFFFFF;
+
+}
+.entered-output:after {
+    content: url(../img/star-big.svg);
+    position: absolute;
+    top: 17px;
+    right: 28px;
+    width: 24px;
+    height: 24px;
+}
+.entered-output strong{
+    color: #FFFFFF;
+    font-family: "Aeroport";
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 28px;
+
+}
+.entered-output p{
+    font-family: "Aeroport";
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-top: 37px;
+    color: #FFFFFF;
+
+}
+
+
+
+
+
+
+
+
 @media (min-height: 1024px) {
     .business-center-mian {
         height: 100vh;
