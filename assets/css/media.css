@@ -55,7 +55,11 @@
 
 
 
-
+    .gallery-cnt h4 {
+        margin-top: 16px;
+        font-size: 24px;
+        line-height: 29px;
+    }
 }
 
 @media (max-width: 1600px){
@@ -86,8 +90,8 @@
     }
 
     .architecture-main:after {
-        top: 88px;
-        right: 135px;
+        top: 39px;
+        right: 55px;
         max-width: 685px;
         height: 747px;
     }
@@ -146,6 +150,14 @@
     .entered-output {
         padding: 117px 25px 56px 23px;
         margin-top: -7px;
+    }
+    .gallery-box {
+        padding: 26px 0 15px;
+    }
+    .gallery-cnt h4 {
+        margin-top: 16px;
+        font-size: 22px;
+        line-height: 29px;
     }
 }
 @media (max-width: 1399px){

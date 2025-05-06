@@ -1,7 +1,3 @@
-$(document).ready(function () {
-    $(".phone").mask('+7 (999)-999-99-99');
-
-});
 
 $(document).ready(function () {
     setTimeout(function () {
@@ -242,21 +238,3 @@ $(document).ready(function () {
 
 
 
-
-$(document).ready(function () {
-    // При фокусе убираем placeholder, при потере — возвращаем если поле пустое
-    $('input').each(function () {
-        const $input = $(this);
-        const placeholderText = $input.attr('placeholder');
-
-        $input.on('focus', function () {
-            $input.attr('placeholder', '');
-        });
-
-        $input.on('blur', function () {
-            if (!$input.val()) {
-                $input.attr('placeholder', placeholderText);
-            }
-        });
-    });
-});

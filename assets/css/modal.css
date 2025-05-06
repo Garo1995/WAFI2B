@@ -212,7 +212,8 @@
     border-bottom: 1px solid rgba(255,255,255,0.55);
 }
 .clicking-submit p a:hover{
-    border-bottom: 1px solid transparent;
+    color: rgba(255,255,255,1);
+    border-bottom: 1px solid rgba(255,255,255,1);
 
 }
 
