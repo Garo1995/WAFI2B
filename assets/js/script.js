@@ -87,43 +87,43 @@ const innerSwiper = new Swiper('.renowned-slider', {
     speed: 600,
     slidesPerView: 3,
     on: {
-        touchStart: () => {
-            slideSwiper.allowSlideNext = false;
-            slideSwiper.allowSlidePrev = false;
+        slideChange: function () {
+            // Убираем возможность листать внешний слайдер, если не в начале или не в конце
+            if (!this.isBeginning && !this.isEnd) {
+                slideSwiper.allowSlideNext = false;
+                slideSwiper.allowSlidePrev = false;
+            }
         },
-        reachEnd: () => {
-            slideSwiper.allowSlideNext = true;
-        },
-        reachBeginning: () => {
+        reachBeginning: function () {
             slideSwiper.allowSlidePrev = true;
         },
-        touchEnd: () => {
-            if (!innerSwiper.isBeginning) slideSwiper.allowSlidePrev = false;
-            if (!innerSwiper.isEnd) slideSwiper.allowSlideNext = false;
+        reachEnd: function () {
+            slideSwiper.allowSlideNext = true;
+        },
+        touchEnd: function () {
+            // Защита: если снова в середине — запретить прокрутку
+            if (!this.isBeginning) slideSwiper.allowSlidePrev = false;
+            if (!this.isEnd) slideSwiper.allowSlideNext = false;
         }
-    },
-
-    breakpoints: {
-
-        '2880': {
-            slidesPerView: 4,
-            slidesPerGroup: 1,
-        },
-        '1940': {
-            slidesPerView: 3,
-            slidesPerGroup: 1,
-        },
-        '1600': {
-            slidesPerView: 3,
-            slidesPerGroup: 1,
-        },
-        '320': {
-            slidesPerView: 3,
-            slidesPerGroup: 1,
-        },
-    },
-
+    }
 });
+
+
+
+
+
+
+
+
+slideSwiper.on('slideChange', function () {
+    slideSwiper.allowSlideNext = true;
+    slideSwiper.allowSlidePrev = true;
+});
+
+
+
+
+
 
 
 

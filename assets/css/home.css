@@ -640,6 +640,12 @@ h1{
     width: 100%;
     position: relative;
 }
+.architecture-photo img{
+    width: 100%;
+    height: 203px;
+    object-fit: cover;
+    object-position: bottom;
+}
 .architecture-arrow{
     backdrop-filter: blur(6px);
     background: #C49D76;
@@ -1075,7 +1081,7 @@ h1{
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 319px;
+    height: 100%;
     cursor: pointer;
 }
 
@@ -1126,6 +1132,8 @@ h1{
     line-height: 155%;
     width: max-content;
     margin-right: 12px;
+    position: relative;
+    z-index: 11;
 }
 
 .block-contact-main .about-business {
@@ -1218,13 +1226,16 @@ h1{
 
 .contact-map{
     width: 100%;
+}
+
+.custom-map{
+    width: 100%;
     height: 480px;
 }
-.contact-map iframe{
+.custom-map ymaps{
     width: 100%;
     height: 100%;
 }
-
 .home-page-mobile{
     display: none;
 }
@@ -1237,13 +1248,21 @@ h1{
 }
 
 
+.world-renowned-box{
+    height: 100%;
 
+}
 .entered-output{
     backdrop-filter: blur(15px);
     background: #FFFFFF26;
-    padding: 123px 28px 37px 23px;
+    padding: 40px 28px 37px 23px;
     border-right: 8px solid #FFFFFF;
     position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
 }
 .left-border{
     border-right: unset;
@@ -1278,7 +1297,6 @@ h1{
     max-width: 280px;
     width: 100%;
 }
-
 
 
 
@@ -1596,5 +1614,8 @@ h1{
         height: 443px;
         padding: 20px;
         gap: 8px;
+    }
+    .block-new {
+        padding-top: 130px;
     }
 }
