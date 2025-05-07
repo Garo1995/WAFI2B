@@ -683,19 +683,22 @@
                                     <div class="block-contact-fl G-align-end">
                                         <div class="block-contact-name">
                                             <p>Почта</p>
-                                            <span>info@afid.ru</span>
+                                            <span>+7 495 431 69 74</span>
+                                            <div class="block-contact-contact">+7 495 431 69 74</div>
+
                                         </div>
                                         <div class="block-contact-line"></div>
 
                                         <div class="block-contact-name">
                                             <p>Телефон</p>
-                                            <span>+7 495 431 69 74</span>
+                                            <div class="block-contact-contact">+7 495 431 69 74</div>
+
                                         </div>
                                         <div class="block-contact-line"></div>
 
                                         <div class="block-contact-name">
                                             <p>Факс</p>
-                                            <span>+ 7 495 796 99 89</span>
+                                            <div class="block-contact-contact">+ 7 495 796 99 89</div>
                                         </div>
                                     </div>
                                     <p>
@@ -719,10 +722,9 @@
                             </div>
                         </div>
                         <div class="contact-map ">
+                            <div id="map">
 
-                            <div class="custom-map" data-center="55.8145,37.7430" data-zoom="13"></div>
-
-
+                            </div>
                         </div>
                         <div class="about-business G-center">
                             <p>Центр расположен в Восточном округе Москвы, в районе Метрогородок, на 1-й линии Открытого
@@ -1495,7 +1497,10 @@
 
 <script src="assets/js/jquery-3.6.4.js"></script>
 
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
 
 <script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
 
@@ -1512,55 +1517,164 @@
 
 <script>
     ymaps.ready(function () {
-        const maps = document.querySelectorAll('.custom-map');
+        var myMap = new ymaps.Map('map', {
+                center: [55.751574, 37.573856],
+                zoom: 9
+            }, {
+                searchControlProvider: 'yandex#search'
+            }),
 
-        maps.forEach((mapEl, index) => {
-            const center = mapEl.dataset.center.split(',').map(Number);
-            const zoom = parseInt(mapEl.dataset.zoom, 10);
+            // Создаём макет содержимого.
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+            ),
 
-            const map = new ymaps.Map(mapEl, {
-                center: center,
-                zoom: zoom,
-                controls: []
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                hintContent: 'Собственный значок метки',
+                balloonContent: 'Это красивая метка'
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                iconImageHref: '',
+                // Размеры метки.
+                iconImageSize: [30, 42],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-5, -38]
+            }),
+
+            myPlacemarkWithContent = new ymaps.Placemark([55.780578, 38.449574], {
+                hintContent: 'Офис в г. Электростали 144012, ул. Пионерская, дом 5',
+                balloonContent: 'А эта — новогодняя',
+                iconContent: ''
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#imageWithContent',
+                // Своё изображение иконки метки.
+                iconImageHref: 'lol.png',
+                // Размеры метки.
+                iconImageSize: [48, 48],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-24, -24],
+                // Смещение слоя с содержимым относительно слоя с картинкой.
+                iconContentOffset: [15, 15],
+                // Макет содержимого.
+                iconContentLayout: MyIconContentLayout
             });
 
-            // Пример одинаковых меток — можешь заменить на уникальные по data-атрибутам
-            const placemarks = [
-                {
-                    coords: [55.8215, 37.7450],
-                    text: '30<br>Минут до ТЦ',
-                },
-                {
-                    coords: [55.8170, 37.7505],
-                    text: '6<br>Минут до МКАД и ТТК',
-                },
-                {
-                    coords: [55.8145, 37.7430],
-                    text: 'Вы здесь',
-                    color: '#B27C47'
-                },
-                {
-                    coords: [55.8150, 37.7555],
-                    text: '25<br>Минут до центра',
-                },
-                {
-                    coords: [55.8100, 37.7580],
-                    text: '12<br>Минут до метро',
-                }
-            ];
 
-            placemarks.forEach(mark => {
-                const placemark = new ymaps.Placemark(mark.coords, {
-                    balloonContent: mark.text,
-                    iconCaption: mark.text
-                }, {
-                    preset: mark.color ? 'islands#circleIcon' : 'islands#circleDotIcon',
-                    iconColor: mark.color || '#ffffff'
-                });
 
-                map.geoObjects.add(placemark);
-            });
+        myMap.geoObjects
+            .add(myPlacemark)
+            .add(myPlacemarkWithContent);
+        myPlacemarkWithContent = new ymaps.Placemark([55.916386, 37.772379], {
+            hintContent: 'Офис в г. Мытищи Олимпийский пр-т, дом 10, офис1502',
+            balloonContent: 'А эта — новогодняя',
+            iconContent: ''
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#imageWithContent',
+            // Своё изображение иконки метки.
+            iconImageHref: 'lol.png',
+            // Размеры метки.
+            iconImageSize: [48, 48],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-24, -24],
+            // Смещение слоя с содержимым относительно слоя с картинкой.
+            iconContentOffset: [15, 15],
+            // Макет содержимого.
+            iconContentLayout: MyIconContentLayout
         });
+
+
+
+        myMap.geoObjects
+            .add(myPlacemark)
+            .add(myPlacemarkWithContent);
+        myPlacemarkWithContent = new ymaps.Placemark([55.751371, 37.998018], {
+            hintContent: 'Офис в г. Железнодорожный ул. Октябрьская, дом 33 (ТЦ Марс, Блок В, офис В-413)',
+            balloonContent: 'А эта — новогодняя',
+            iconContent: ''
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#imageWithContent',
+            // Своё изображение иконки метки.
+            iconImageHref: 'lol.png',
+            // Размеры метки.
+            iconImageSize: [48, 48],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-24, -24],
+            // Смещение слоя с содержимым относительно слоя с картинкой.
+            iconContentOffset: [15, 15],
+            // Макет содержимого.
+            iconContentLayout: MyIconContentLayout
+        });
+
+
+
+        myMap.geoObjects
+            .add(myPlacemark)
+            .add(myPlacemarkWithContent);
+        myPlacemarkWithContent = new ymaps.Placemark([55.922061, 38.000776], {
+            hintContent: 'Офис в г. Щёлково 141102, Пролетарский пр-т, дом 8а',
+            balloonContent: 'А эта — новогодняя',
+            iconContent: ''
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#imageWithContent',
+            // Своё изображение иконки метки.
+            iconImageHref: 'lol.png',
+            // Размеры метки.
+            iconImageSize: [48, 48],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-24, -24],
+            // Смещение слоя с содержимым относительно слоя с картинкой.
+            iconContentOffset: [15, 15],
+            // Макет содержимого.
+            iconContentLayout: MyIconContentLayout
+        });
+
+
+
+        myMap.geoObjects
+            .add(myPlacemark)
+            .add(myPlacemarkWithContent);
+        myPlacemarkWithContent = new ymaps.Placemark([55.508590, 36.023853], {
+            hintContent: 'Офис в г. Можайск 143200, ул.Желябова, д.21, офис 1',
+            balloonContent: 'А эта — новогодняя',
+            iconContent: ''
+        }, {
+            // Опции.
+            // Необходимо указать данный тип макета.
+            iconLayout: 'default#imageWithContent',
+            // Своё изображение иконки метки.
+            iconImageHref: 'lol.png',
+            // Размеры метки.
+            iconImageSize: [48, 48],
+            // Смещение левого верхнего угла иконки относительно
+            // её "ножки" (точки привязки).
+            iconImageOffset: [-24, -24],
+            // Смещение слоя с содержимым относительно слоя с картинкой.
+            iconContentOffset: [15, 15],
+            // Макет содержимого.
+            iconContentLayout: MyIconContentLayout
+        });
+
+
+
+        myMap.geoObjects
+            .add(myPlacemark)
+            .add(myPlacemarkWithContent);
     });
 </script>
 
