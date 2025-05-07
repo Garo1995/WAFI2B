@@ -1172,7 +1172,7 @@ h1{
     font-size: 34px;
     line-height: 100%;
     letter-spacing: 1.3px;
-    color: #ffffff;
+    color: #ffffff!important;
     margin-top: 24px;
     white-space: nowrap;
 }
