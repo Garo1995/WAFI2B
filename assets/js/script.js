@@ -41,7 +41,7 @@ let slideSwiper = new Swiper(".slideLab-slider", {
     direction: "vertical",
     slidesPerView: 1,
     mousewheel: true,
-    speed: 700,
+    speed: 1200,
     allowTouchMove: true,
     on: {
         slideChange: function () {
