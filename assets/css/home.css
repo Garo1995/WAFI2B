@@ -1233,6 +1233,15 @@ h1{
     height: 480px;
     position: relative;
 }
+.contact-map:before{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 .map{
     width: 100%;
     height: 100%;
@@ -1557,7 +1566,11 @@ h1{
 
 
 
-
+    .block-contact-info>p {
+        margin-top: 20px;
+        font-size: 24px;
+        max-width: 690px;
+    }
 
 }
 
@@ -1698,4 +1711,43 @@ h1{
     .block-new {
         padding-top: 130px;
     }
+
+
+
+
+    .location-map{
+        top: 82px;
+    }
+    .contact-map-href{
+        top: 30px;
+    }
+    .contact-map-count{
+        height: 100px;
+
+    }
+    .contact-map-href p{
+        max-width: 225px;
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .contact-map-href-two {
+        top: 162px;
+    }
+    .contact-map-href-three{
+        top: 80px;
+    }
+
+    .contact-map-href-four{
+        bottom: 80px;
+        top: auto;
+    }
+    .contact-map {
+        height: 300px;
+    }
+
+
+
+
+
 }
