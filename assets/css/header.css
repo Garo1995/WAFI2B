@@ -5,7 +5,7 @@ header{
     left: 0;
     width: 100%;
     z-index: 9999;
-    transition: 0.3s;
+    transition: 0.7s;
 
 }
 .header-main{
@@ -16,6 +16,9 @@ header{
     white-space: nowrap;
 }
 .header-menu{
+    gap: 140px;
+}
+.mobile-menu{
     gap: 140px;
 }
 .mobile-menu ul{
@@ -136,6 +139,9 @@ header{
     .header-menu {
         gap: 50px;
     }
+    .mobile-menu{
+        gap: 50px;
+    }
     .header-main {
         padding: 30px 0;
     }
@@ -166,6 +172,9 @@ header{
         gap: 27px;
     }
     .header-menu {
+        gap: 35px;
+    }
+    .mobile-menu{
         gap: 35px;
     }
     .mobile-menu li:after {
@@ -231,13 +240,17 @@ header{
     }
    header .btn {
         padding: 24px 36px;
-        position: absolute;
-        bottom: 24px;
         max-width: 400px;
         width: 100%;
     }
     .mobile-menu{
-        margin-bottom: 90px;
+        margin-bottom: 0;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        padding-top: 158px;
+        padding-bottom: 24px;
+        width: 100%;
     }
     .mobile-logo {
         display: flex;
@@ -246,11 +259,14 @@ header{
         top: 0;
         left: 16px;
         width: calc(100% - 32px);
-        padding: 24px 0 24px;
+        padding: 22px 0 24px;
     }
 
-    .mobile-menu {
-        margin-bottom: 15px;
+}
+@media (max-width: 1025px){
+
+    .header.hidden {
+        transform: translateY(-100%);
     }
 }
 @media (max-width: 767px){
@@ -262,7 +278,7 @@ header{
         padding: 24px 0 19px;
     }
     .mobile-logo {
-        padding: 24px 0 19px;
+        padding: 22px 0 19px;
     }
     .mobile-menu ul {
         gap: 23px;

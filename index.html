@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    <header class="header">
+    <header id="mobileHeader" class="header">
         <div class="container">
             <div class="header-main G-align-center G-justify-between">
                 <a href="#" data-slide="1" class="logo G-flex">
@@ -72,19 +72,19 @@
                             <img src="./assets/img/logo.svg" alt="logo">
                         </a>
                     </div>
-                    <div class="mobile-menu">
-                        <ul class="menu G-align-center">
-                            <li class="active-menu"><a href="#" data-slide="0">Главная</a></li>
-                            <li><a href="#" data-slide="1">О проекте</a></li>
-                            <li><a href="#" data-slide="2">Цифры</a></li>
-                            <li><a href="#" data-slide="3"></a></li>
-                            <li><a href="#" data-slide="4">Выбор недвижимости</a></li>
-                            <li><a href="#" data-slide="5">Новости</a></li>
-                            <li><a href="#" data-slide="6">Объекты AFI</a></li>
-                            <li><a href="#" data-slide="7">Контакты</a></li>
-                        </ul>
-                    </div>
-                    <button data-val="modal" class="open_modal btn">Оставить заявку</button>
+                   <div class="mobile-menu G-align-center">
+                       <ul class="menu G-align-center">
+                           <li class="active-menu"><a href="#" data-slide="0">Главная</a></li>
+                           <li><a href="#" data-slide="1">О проекте</a></li>
+                           <li><a href="#" data-slide="2">Цифры</a></li>
+                           <li><a href="#" data-slide="3"></a></li>
+                           <li><a href="#" data-slide="4">Выбор недвижимости</a></li>
+                           <li><a href="#" data-slide="5">Новости</a></li>
+                           <li><a href="#" data-slide="6">Объекты AFI</a></li>
+                           <li><a href="#" data-slide="7">Контакты</a></li>
+                       </ul>
+                     <button data-val="modal" class="open_modal btn">Оставить заявку</button>
+                   </div>
                 </div>
                 <div class="open-menu">
                     <span></span>
@@ -98,7 +98,7 @@
         <div class="swiper slideLab-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="home-main" style="background-image: url('./assets/img/bg-fon.png');">
+                    <div class="home-main" style="background-image: url('./assets/img/bg-fon.jpg');">
                         <div class="container first-business-anime">
                             <div class="first-business G-align-end G-justify-between">
                                 <div class="first-business-info">
@@ -122,7 +122,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="swiper-slide">
                     <div class="business-center">
                         <div class="container">
@@ -150,7 +149,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="business-center-bg G-flex-column G-justify-between"
-                                                     style="background-image: url('./assets/img/gallery-1.png');">
+                                                     style="background-image: url('./assets/img/gallery-1.jpg');">
                                                     <div class="minutes-center G-align-center">
                                                         <span class="G-center">15</span>
                                                         <p>Минут до <br> МКАД и ТТК</p>
@@ -168,7 +167,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="business-center-bg G-flex-column G-justify-between"
-                                                     style="background-image: url('./assets/img/gallery-3.png');">
+                                                     style="background-image: url('./assets/img/gallery-3.jpg');">
                                                     <div class="minutes-center G-align-center">
                                                         <span class="G-center">12</span>
                                                         <p>Минут до <br> метро б-р Рокоссовского</p>
@@ -257,7 +256,7 @@
                                     <div class="architecture-flex G-flex-wrap">
                                         <div class="architecture-info">
                                             <strong>7-25</strong>
-                                            <p>этажи офисных помещений</p>
+                                            <p>Этажи офисных помещений</p>
                                         </div>
                                         <div class="architecture-info">
                                             <strong>3-5</strong>
@@ -274,7 +273,7 @@
                                         <div class="architecture-info">
                                             <strong>30</strong>
                                             <p>Помещений
-                                                Для ритейлинга</p>
+                                                для ритейлинга</p>
                                         </div>
                                         <div class="architecture-info">
                                             <strong>40</strong>
@@ -296,7 +295,7 @@
                                     </div>
                                     <div class="architecture-cart">
                                         <div class="architecture-photo G-flex">
-                                            <img src="./assets/img/gallery-1.png" alt="architecture">
+                                            <img src="./assets/img/gallery-1.jpg" alt="architecture">
                                         </div>
                                         <div class="architecture-text">
                                             <h3>архитектура</h3>
@@ -342,13 +341,13 @@
                                             <h3>для инвестиции</h3>
                                         </div>
                                     </div>
-                                    <div class="great-option-href">
-                                        <a href="#" class="open-gallery great-option-photo G-flex">
+                                    <div class="open-gallery great-option-href">
+                                        <div class="great-option-photo G-flex">
                                             <img src="./assets/img/great-option-2.jpg" alt="architecture">
                                             <span class="architecture-arrow G-center">
-                                             <i class="icon-arrow-top"></i>
-                                         </span>
-                                        </a>
+                                                 <i class="icon-arrow-top"></i>
+                                             </span>
+                                        </div>
                                         <h2>галерея <br> бизнес центра</h2>
                                     </div>
                                 </div>
@@ -407,7 +406,7 @@
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <div class="block-new-box G-flex-column">
-                                                <img src="./assets/img/gallery-3.png" alt="new">
+                                                <img src="./assets/img/gallery-3.jpg" alt="new">
                                                 <h3>
                                                     Успейте на день открытых дверей в нашем бизнес центре
                                                 </h3>
@@ -419,7 +418,7 @@
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="block-new-box G-flex-column">
-                                                <img src="./assets/img/gallery-1.png" alt="new">
+                                                <img src="./assets/img/gallery-1.jpg" alt="new">
                                                 <h3>
                                                     Успейте на день открытых дверей в нашем бизнес центре
                                                 </h3>
@@ -431,7 +430,7 @@
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="block-new-box G-flex-column">
-                                                <img src="./assets/img/gallery-5.png" alt="new">
+                                                <img src="./assets/img/gallery-5.jpg" alt="new">
                                                 <h3>
                                                     Успейте на день открытых дверей в нашем бизнес центре
                                                 </h3>
@@ -443,7 +442,7 @@
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="block-new-box G-flex-column">
-                                                <img src="./assets/img/gallery-5.png" alt="new">
+                                                <img src="./assets/img/gallery-5.jpg" alt="new">
                                                 <h3>
                                                     Успейте на день открытых дверей в нашем бизнес центре
                                                 </h3>
@@ -460,7 +459,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide " data-hide-header="true">
+                <div class="swiper-slide" data-hide-header="true">
                     <div class="world-renowned" style="background-image: url('./assets/img/afi.jpg')">
                         <div class="container">
                             <div class="world-renowned-cnt G-align-center G-justify-between">
@@ -744,8 +743,8 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="gallery-cnt">
-                                    <a href="./assets/img/gallery-1.png" data-fancybox="gallery">
-                                        <img src="./assets/img/gallery-1.png" alt="gallery">
+                                    <a href="./assets/img/gallery-1.jpg"  data-fancybox="gallery">
+                                        <img src="./assets/img/gallery-1.jpg" alt="gallery">
                                     </a>
                                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                                 </div>
@@ -760,8 +759,8 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="gallery-cnt">
-                                    <a href="./assets/img/gallery-3.png" data-fancybox="gallery">
-                                        <img src="./assets/img/gallery-3.png" alt="gallery">
+                                    <a href="./assets/img/gallery-3.jpg" data-fancybox="gallery">
+                                        <img src="./assets/img/gallery-3.jpg" alt="gallery">
                                     </a>
                                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                                 </div>
@@ -776,8 +775,8 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="gallery-cnt">
-                                    <a href="./assets/img/gallery-5.png" data-fancybox="gallery">
-                                        <img src="./assets/img/gallery-5.png" alt="gallery">
+                                    <a href="./assets/img/gallery-5.jpg" data-fancybox="gallery">
+                                        <img src="./assets/img/gallery-5.jpg" alt="gallery">
                                     </a>
                                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                                 </div>
@@ -815,7 +814,7 @@
 </section>
 <section class="all-block-mob">
     <div class="home-page-mobile home-page">
-        <div class="home-main" style="background-image: url('./assets/img/bg-fon.png');">
+        <div class="home-main" style="background-image: url('./assets/img/bg-fon.jpg');">
             <div class="container first-business-anime">
                 <div class="first-business G-align-end G-justify-between">
                     <div class="first-business-info">
@@ -877,7 +876,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="business-center-bg G-flex-column G-justify-between"
-                                         style="background-image: url('./assets/img/gallery-1.png');">
+                                         style="background-image: url('./assets/img/gallery-1.jpg');">
                                         <div class="minutes-center G-align-center">
                                             <span class="G-center">15</span>
                                             <p>Минут до <br> МКАД и ТТК</p>
@@ -895,7 +894,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="business-center-bg G-flex-column G-justify-between"
-                                         style="background-image: url('./assets/img/gallery-3.png');">
+                                         style="background-image: url('./assets/img/gallery-3.jpg');">
                                         <div class="minutes-center G-align-center">
                                             <span class="G-center">12</span>
                                             <p>Минут до <br> метро б-р Рокоссовского</p>
@@ -1004,7 +1003,7 @@
                         </div>
                         <div class="architecture-cart">
                             <div class="architecture-photo G-flex">
-                                <img src="./assets/img/gallery-1.png" alt="architecture">
+                                <img src="./assets/img/gallery-1.jpg" alt="architecture">
                             </div>
                             <div class="architecture-text">
                                 <h3>архитектура</h3>
@@ -1025,7 +1024,7 @@
                 </div>
             </div>
         </div>
-        <div class="great-option" style="background-image: url('./assets/img/gallery-3.png')">
+        <div class="great-option" style="background-image: url('./assets/img/gallery-3.jpg')">
             <div class="container">
                 <div class="great-option-main anime-scroll">
                     <div class="great-option-flex G-align-center">
@@ -1097,7 +1096,7 @@
                     <h1>новости</h1>
                     <div class="block-new-mobile">
                         <div class="block-new-box G-flex-column">
-                            <img src="./assets/img/gallery-3.png" alt="new">
+                            <img src="./assets/img/gallery-3.jpg" alt="new">
                             <h3>
                                 Успейте на день открытых дверей в нашем бизнес центре
                             </h3>
@@ -1107,7 +1106,7 @@
                             </p>
                         </div>
                         <div class="block-new-box G-flex-column">
-                            <img src="./assets/img/gallery-1.png" alt="new">
+                            <img src="./assets/img/gallery-1.jpg" alt="new">
                             <h3>
                                 Успейте на день открытых дверей в нашем бизнес центре
                             </h3>
@@ -1117,7 +1116,7 @@
                             </p>
                         </div>
                         <div class="block-new-box G-flex-column">
-                            <img src="./assets/img/gallery-5.png" alt="new">
+                            <img src="./assets/img/gallery-5.jpg" alt="new">
                             <h3>
                                 Успейте на день открытых дверей в нашем бизнес центре
                             </h3>
@@ -1128,7 +1127,7 @@
                         </div>
 
                         <div class="block-new-box more-black-new G-flex-column">
-                            <img src="./assets/img/gallery-5.png" alt="new">
+                            <img src="./assets/img/gallery-5.jpg" alt="new">
                             <h3>
                                 Успейте на день открытых дверей в нашем бизнес центре
                             </h3>
@@ -1138,7 +1137,7 @@
                             </p>
                         </div>
                         <div class="block-new-box more-black-new G-flex-column">
-                            <img src="./assets/img/gallery-5.png" alt="new">
+                            <img src="./assets/img/gallery-5.jpg" alt="new">
                             <h3>
                                 Успейте на день открытых дверей в нашем бизнес центре
                             </h3>
@@ -1148,7 +1147,7 @@
                             </p>
                         </div>
                         <div class="block-new-box more-black-new G-flex-column">
-                            <img src="./assets/img/gallery-5.png" alt="new">
+                            <img src="./assets/img/gallery-5.jpg" alt="new">
                             <h3>
                                 Успейте на день открытых дверей в нашем бизнес центре
                             </h3>
@@ -1396,8 +1395,8 @@
             </div>
             <div class="gallery-box-mobile">
                 <div class="gallery-cnt">
-                    <a href="./assets/img/gallery-1.png" data-fancybox="gallery">
-                        <img src="./assets/img/gallery-1.png" alt="gallery">
+                    <a href="./assets/img/gallery-1.jpg" data-fancybox="gallery">
+                        <img src="./assets/img/gallery-1.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
@@ -1408,8 +1407,8 @@
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
                 <div class="gallery-cnt">
-                    <a href="./assets/img/gallery-3.png" data-fancybox="gallery">
-                        <img src="./assets/img/gallery-3.png" alt="gallery">
+                    <a href="./assets/img/gallery-3.jpg" data-fancybox="gallery">
+                        <img src="./assets/img/gallery-3.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
@@ -1420,8 +1419,8 @@
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
                 <div class="gallery-cnt">
-                    <a href="./assets/img/gallery-5.png" data-fancybox="gallery">
-                        <img src="./assets/img/gallery-5.png" alt="gallery">
+                    <a href="./assets/img/gallery-5.jpg" data-fancybox="gallery">
+                        <img src="./assets/img/gallery-5.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
@@ -1496,9 +1495,7 @@
 
 <script src="assets/js/jquery-3.6.4.js"></script>
 
-
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-
 
 <script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
 
@@ -1506,6 +1503,11 @@
 <script src="assets/js/swiper-bundle.min.js"></script>
 
 <script src="assets/js/script.js"></script>
+
+
+
+
+
 
 
 <script>
@@ -1563,7 +1565,37 @@
 </script>
 
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const menuLinks = document.querySelectorAll('.menu li a');
 
+        const swiper = new Swiper('.slideLab-slider', {
+        direction: 'vertical',
+        mousewheel: true,
+        slidesPerView: 1,
+        speed: 800,
+        on: {
+        slideChange: function () {
+        updateActiveMenu(this.activeIndex);
+    }
+    }
+    });
+
+        menuLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const slideIndex = Number(this.getAttribute('data-slide'));
+        swiper.slideTo(slideIndex);
+    });
+    });
+
+        function updateActiveMenu(index) {
+        document.querySelectorAll('.menu li').forEach(li => li.classList.remove('active-menu'));
+        const currentLink = document.querySelector(`.menu li a[data-slide="${index}"]`);
+        if (currentLink) currentLink.parentElement.classList.add('active-menu');
+    }
+    });
+</script>
 
 
 <script>

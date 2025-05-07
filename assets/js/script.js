@@ -238,3 +238,29 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    let lastScrollTop = 0;
+    const header = document.getElementById('mobileHeader');
+
+    window.addEventListener('scroll', function () {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Только на мобильных
+        if (window.innerWidth <= 1025) {
+            if (currentScroll > lastScrollTop) {
+                // Прокрутка вниз — скрыть
+                header.classList.add('hidden');
+            } else {
+                // Прокрутка вверх — показать
+                header.classList.remove('hidden');
+            }
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // не позволяем < 0
+    }, false);
+});

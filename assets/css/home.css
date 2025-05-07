@@ -590,6 +590,7 @@ h1{
     font-size: 48px;
     line-height: 28px;
     text-align: left;
+    white-space: nowrap;
 }
 .architecture-info p{
     font-weight: 400;
@@ -754,6 +755,7 @@ h1{
 }
 .great-option-href{
     position: relative;
+    cursor: pointer;
 }
 .great-option-href h2{
     color: #FFFFFF;

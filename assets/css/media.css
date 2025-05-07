@@ -376,6 +376,7 @@
         font-size: 26px;
         line-height: 32px;
         max-width: 195px;
+        margin-top: -10px;
     }
     .infrastructure-pic {
         max-width: 345px;
@@ -496,6 +497,7 @@
         font-size: 22px;
         line-height: 29px;
         max-width: 188px;
+        margin-top: -12px;
     }
 
 
@@ -544,9 +546,9 @@
         height: auto;
     }
     .home-main:before {
-        height: 260px;
+        height: 100%;
+        opacity: 0.7;
     }
-
     .first-business-info{
         width: 100%;
     }
@@ -617,6 +619,8 @@
     .about-business {
         padding: 34px 16px;
         position: relative;
+        backdrop-filter: blur(15px);
+        background: #424c57;
     }
     .infrastructure-cnt {
         max-width: 555px;
@@ -626,6 +630,7 @@
         font-size: 36px;
         line-height: 45px;
         max-width: 272px;
+        margin-top: -15px;
     }
     .infrastructure-pic {
         max-width: 430px;
@@ -896,7 +901,7 @@
         width: calc(100% + 16px);
         height: 70px;
         position: absolute;
-        top: 0;
+        top: -1px;
         left: -16px;
         z-index: 2;
     }
@@ -906,7 +911,7 @@
         width: 100%;
         height: 70px;
         position: absolute;
-        bottom: 0;
+        bottom: -1px;
         left: 0;
         z-index: 2;
         transform: rotate(180deg);
@@ -949,6 +954,7 @@
     }
     .entered-output {
         padding: 30px 21px 27px 18px;
+        height: 183px;
     }
     .world-renowned-marg{
         margin: 0;
@@ -956,13 +962,21 @@
     .architecture-cnt {
         z-index: 99;
     }
-
+    .architecture-main:after {
+        top: 161px;
+        right: 0;
+        max-width: 632px;
+        height: 590px;
+    }
 }
 @media (max-width: 767px){
     h1 {
         font-size: 64px;
     }
-
+    .business-center{
+        background-image: unset;
+        background: #46515D;
+    }
 
     .first-business {
         padding-top: 350px;
@@ -992,7 +1006,7 @@
     .architecture-info p {
         font-size: 14px;
         line-height: 22px;
-        max-width: 278px;
+        max-width: max-content;
     }
     .architecture-info:after{
         display: none;
@@ -1006,7 +1020,7 @@
         margin-top: -10px;
     }
     .great-option {
-        background-position: unset;
+        background-position: center;
     }
     .be-the-first h3 {
         font-size: 18px;
@@ -1059,12 +1073,23 @@
     .be-the-first {
         align-items: flex-start;
     }
+    .great-option-cnt {
+        margin-top: 53px;
+        margin-bottom: 49px;
+    }
 
-
-
-
-
-
+    .business-first h2 {
+        font-size: 48px;
+    }
+    .business-center-cnt {
+        margin: 34px auto 0;
+    }
+    .architecture-logo img{
+        max-width: 360px;
+    }
+    .architecture-logo img + img{
+        max-width: 300px;
+    }
 }
 @media (max-width: 575px){
     h1 {
@@ -1112,8 +1137,13 @@
     .first-business-name h3 {
         letter-spacing: 3px;
     }
-
-
+    .great-option-box p {
+        font-size: 12px;
+    }
+    .be-the-first-btn {
+        margin-top: 10px;
+        flex-direction: column-reverse;
+    }
 
 }
 @media (max-width: 410px){
