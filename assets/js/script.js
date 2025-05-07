@@ -264,3 +264,26 @@ document.addEventListener('DOMContentLoaded', function () {
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // не позволяем < 0
     }, false);
 });
+
+
+
+
+
+
+
+
+
+$('.menu a').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+        && location.hostname == this.hostname) {
+        let $target = $(this.hash);
+        $target = $target.length && $target
+            || $('[name=' + this.hash.slice(1) +']');
+        if ($target.length) {
+            let targetOffset = $target.offset().top-1;
+            $('html,body')
+                .animate({scrollTop: targetOffset}, 1200);
+            return false;
+        }
+    }
+});
