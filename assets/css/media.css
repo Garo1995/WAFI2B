@@ -155,6 +155,9 @@
         font-size: 22px;
         line-height: 29px;
     }
+    .contact-map {
+        height: 360px;
+    }
 }
 @media (max-width: 1399px){
     .business-center-bg {
@@ -316,8 +319,9 @@
     .mobile-menu li:after {
         bottom: -31px;
     }
+
     .contact-map {
-        height: 530px;
+        height: 300px;
     }
     .gallery-cnt a {
         height: 290px;

@@ -1229,11 +1229,13 @@ h1{
 
 .contact-map{
     width: 100%;
-}
+    overflow: hidden;
+    height: 480px;
 
+}
 #map{
     width: 100%;
-    height: 480px;
+    height: 100%;
 }
 
 .home-page-mobile{
