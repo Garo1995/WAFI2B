@@ -167,6 +167,7 @@
     background: unset;
     width: 100%;
     transition: 0.3s;
+    border-radius: 0;
 }
 .modal-inp input::placeholder{
     color: #FFFFFF;

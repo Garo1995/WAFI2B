@@ -663,8 +663,6 @@
     .about-business {
         padding: 34px 16px;
         position: relative;
-        backdrop-filter: blur(15px);
-        background: #424c57;
     }
     .infrastructure-cnt {
         max-width: 555px;
@@ -720,7 +718,7 @@
         padding: 19px 35px;
         flex-direction: column;
         align-items: flex-start;
-        z-index: 999;
+        z-index: 97;
     }
     .supermarket-area strong {
         font-weight: 400;
@@ -914,7 +912,11 @@
         transform: translateX(-100%);
         position: fixed;
         height: auto;
-        z-index: 999999;
+        z-index: 999;
+
+    }
+    .architecture-bulding{
+        z-index: 91;
 
     }
     .go-back{
@@ -998,8 +1000,8 @@
         font-size: 64px;
     }
     .business-center{
-        background-image: unset;
-        background: #46515D;
+        background-image: url("../img/tagilskaya-mob.png");
+        background-position: center;
     }
 
     .first-business {
@@ -1113,6 +1115,31 @@
     }
     .architecture-logo img + img{
         max-width: 300px;
+    }
+    .first-business-name{
+        align-items: flex-start;
+    }
+    .error-page-style {
+        max-width: 800px;
+        justify-content: end;
+        padding-bottom: 24px;
+
+        align-items: flex-start;
+    }
+    .error-page-style .btn {
+        margin-top: 66px;
+        max-width: 423px;
+        font-size: 16px;
+        height: 60px;
+    }
+    .error-page-style .first-business-name {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .error-page-style h1 {
+        text-align: left;
+        max-width: 215px;
     }
 }
 @media (max-width: 575px){

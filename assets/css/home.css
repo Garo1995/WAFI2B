@@ -504,6 +504,10 @@ h1{
     background: #46515D66;
 
 }
+a[href^="tel"] {
+    color: inherit;
+    text-decoration: none;
+}
 .about-business p{
     font-family: "Aeroport";
     font-weight: 700;
@@ -1309,12 +1313,9 @@ h1{
     top: auto;
 }
 
-/* По умолчанию показываем только десктоп-карту */
 .map-mobile {
     display: none;
 }
-
-/* На мобильных — наоборот */
 @media (max-width: 1025px) {
     .map-desktop {
         display: none;
@@ -1390,8 +1391,31 @@ h1{
 
 
 
-
-
+.error-page{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.error-page-style{
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+}
+.error-page-style .first-business-name{
+    margin-top: 25px;
+    margin-left: auto;
+}
+.error-page-style .btn{
+    margin-top: 96px;
+    max-width: 380px;
+    width: 100%;
+    font-size: 24px;
+    letter-spacing: 2px;
+    height: 83px;
+}
+.error-page-style .metro-town {
+    padding-bottom: 0;
+}
 
 @media (min-height: 1024px) {
     .business-center-mian {
@@ -1461,6 +1485,9 @@ h1{
     }
     .business-first h2 {
         font-size: 75px;
+    }
+    .error-page-style {
+        max-width: 600px;
     }
     .business-street {
         max-width: 400px;
