@@ -121,14 +121,12 @@ header{
     transform: translateY(-100%);
     transition: 1.1s;
 }
-.home-main-active header{
-    transform: translateY(0);
-}
+
 
 
 .home-main-active .hide-header {
     transform: translateY(-100%);
-    transition: 2.0s;
+    transition: 1.0s;
 }
 
 
@@ -499,6 +497,8 @@ h1{
     left: 0;
     width: 100%;
     transition: 0.3s;
+    z-index: 10;
+    cursor: pointer;
 }
 .about-business:hover{
     background: #46515D66;
@@ -662,7 +662,10 @@ a[href^="tel"] {
     right: 12px;
     border-radius: 50%;
     cursor: pointer;
+    transition:  0.3s;
+
 }
+
 .icon-arrow-top{
     content: url("../img/arrow-top.svg");
     width: 24px;
@@ -760,6 +763,9 @@ a[href^="tel"] {
 .great-option-href{
     position: relative;
     cursor: pointer;
+}
+.great-option-href:hover .architecture-arrow{
+    transform: scale(1.3);
 }
 .great-option-href h2{
     color: #FFFFFF;
@@ -1038,6 +1044,7 @@ a[href^="tel"] {
     background-size: cover;
     width: 100%;
     position: relative;
+    background-image: url(../img/afi.jpg) ;
 }
 .world-renowned:before{
     content: "";
@@ -1415,6 +1422,9 @@ a[href^="tel"] {
 }
 .error-page-style .metro-town {
     padding-bottom: 0;
+}
+.img-mobile{
+    display: none;
 }
 
 @media (min-height: 1024px) {

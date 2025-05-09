@@ -1,5 +1,6 @@
 @import "../font/font.css";
 html,
+
 body,
 div,
 span,
@@ -152,6 +153,9 @@ body {
     font-family: 'Alethia Pro';
     background: #46515D66;
 
+}
+html{
+    scroll-behavior: smooth;
 }
 
 .container{

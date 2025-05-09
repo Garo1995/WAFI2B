@@ -1,12 +1,21 @@
 window.addEventListener('load', function() {
     window.scrollTo(0, 0);
 });
+
+
 $(document).ready(function () {
     setTimeout(function () {
         $(".tagilskaya-sec").addClass("tagilskaya-act");
     }, 800);
+
     setTimeout(function () {
         $(".home-page").addClass("home-main-active");
+
+        // Через 600 мс после появления контента — плавное появление хедера
+        setTimeout(function () {
+            $("header").addClass("header-show");
+        }, 900);
+
     }, 4000);
 });
 
@@ -86,12 +95,38 @@ document.querySelectorAll('[data-slide]').forEach(link => {
 const innerSwiper = new Swiper('.renowned-slider', {
     direction: 'vertical',
     nested: true,
-    mousewheel: true,
+    mousewheel: false,
+
     speed: 600,
     slidesPerView: 3,
     on: {
+        init: function () {
+            const container = this.el;
+            container.addEventListener('mouseenter', () => {
+                this.mousewheel.enable();
+
+                container.addEventListener('wheel', preventPageScroll, { passive: false });
+            });
+
+            container.addEventListener('mouseleave', () => {
+                this.mousewheel.disable();
+
+                container.removeEventListener('wheel', preventPageScroll, { passive: false });
+            });
+
+            container.addEventListener('touchstart', () => {
+                this.mousewheel.enable();
+            });
+
+            container.addEventListener('touchend', () => {
+                this.mousewheel.disable();
+            });
+
+            function preventPageScroll(e) {
+                e.preventDefault();
+            }
+        },
         slideChange: function () {
-            // Убираем возможность листать внешний слайдер, если не в начале или не в конце
             if (!this.isBeginning && !this.isEnd) {
                 slideSwiper.allowSlideNext = false;
                 slideSwiper.allowSlidePrev = false;
@@ -171,6 +206,11 @@ $('.open_modal').on('click', function () {
     modal.removeClass('out');
     modal.fadeIn();
 });
+$(document).on('keydown', function (e) {
+    if (e.key === 'Escape' || e.keyCode === 27) {
+        $('.modal:visible').fadeOut().addClass('out');
+    }
+});
 $('.close').on('click', function () {
     let prt = $(this).parents('.modal');
     prt.addClass('out')
@@ -215,6 +255,11 @@ $('.open-gallery').on('click', function (){
     $('.gallery-box').addClass('gallery-box-active')
 })
 
+$(document).on('keydown', function (e) {
+    if (e.key === 'Escape' || e.keyCode === 27) {
+        $('.gallery-box').removeClass('gallery-box-active');
+    }
+});
 
 $('.go-back').on('click', function (){
     $('.gallery-box').removeClass('gallery-box-active')
@@ -226,6 +271,8 @@ $('.go-back').on('click', function (){
 
 $('.see-more').on('click', function (){
     $('.more-black-new').toggleClass('more-black-new-active')
+    $('.see-more').toggleClass('active')
+
 })
 
 
@@ -252,22 +299,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', function () {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
-        // Только на мобильных
         if (window.innerWidth <= 1025) {
             if (currentScroll > lastScrollTop) {
-                // Прокрутка вниз — скрыть
                 header.classList.add('hidden');
             } else {
-                // Прокрутка вверх — показать
-                header.classList.remove('hidden');
+                if (currentScroll < maxScroll - 50) {
+                    header.classList.remove('hidden');
+                }
             }
         }
 
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // не позволяем < 0
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     }, false);
 });
-
 
 
 
@@ -290,3 +336,7 @@ $('.menu a').click(function() {
         }
     }
 });
+
+
+
+

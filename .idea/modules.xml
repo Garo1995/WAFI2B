@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/WAFI2B.iml" filepath="$PROJECT_DIR$/.idea/WAFI2B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/WAFI.iml" filepath="$PROJECT_DIR$/.idea/WAFI.iml" />
     </modules>
   </component>
 </project>
