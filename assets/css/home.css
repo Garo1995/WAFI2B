@@ -1241,7 +1241,7 @@ a[href^="tel"] {
 .contact-map{
     width: 100%;
     overflow: hidden;
-    height: 480px;
+    height: calc(100% - 335px);
     position: relative;
 }
 .contact-map:before{
@@ -1315,9 +1315,8 @@ a[href^="tel"] {
 }
 
 .contact-map-href-four{
-    bottom: 48px;
-    left: 70%;
-    top: auto;
+    left: 68%;
+    top: 249px;
 }
 
 .map-mobile {
