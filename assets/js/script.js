@@ -47,7 +47,6 @@ $('.menu li').on('click', function () {
 })
 
 
-
 let slideSwiper = new Swiper(".slideLab-slider", {
     direction: "vertical",
     slidesPerView: 1,
@@ -55,14 +54,11 @@ let slideSwiper = new Swiper(".slideLab-slider", {
     speed: 1200,
     allowTouchMove: true,
     on: {
-        // Используем более надёжное событие
-        slideChangeTransitionEnd: function () {
-            const activeIndex = this.activeIndex;
-            const activeSlide = this.slides[activeIndex];
+        slideChange: function () {
+            // Получаем активный слайд
+            const activeSlide = this.slides[this.activeIndex];
 
-            // Защита от ошибки, если слайд не найден
-            if (!activeSlide) return;
-
+            // Проверяем, есть ли у слайда атрибут data-hide-header
             const shouldHideHeader = activeSlide.getAttribute("data-hide-header") === "true";
 
             if (shouldHideHeader) {
@@ -71,10 +67,9 @@ let slideSwiper = new Swiper(".slideLab-slider", {
                 $(".header").removeClass("hide-header");
             }
         }
-
     }
-});
 
+});
 
 
 document.querySelector('header').addEventListener('wheel', function(e) {
@@ -86,14 +81,15 @@ document.querySelector('header').addEventListener('wheel', function(e) {
 
 
 
-
+// Если есть кнопки с data-slide, добавим им обработчик тоже
 document.querySelectorAll('[data-slide]').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         e.preventDefault();
-        const slideIndex = parseInt(this.getAttribute('data-slide'));
+        const slideIndex = Number(this.getAttribute('data-slide'));
         slideSwiper.slideTo(slideIndex);
     });
 });
+
 
 const innerSwiper = new Swiper('.renowned-slider', {
     direction: 'vertical',
@@ -101,13 +97,13 @@ const innerSwiper = new Swiper('.renowned-slider', {
     mousewheel: true,
     speed: 600,
     slidesPerView: 3,
-
     on: {
-        init: function () {
-            checkEdges(this);
-        },
         slideChange: function () {
-            checkEdges(this);
+            // Убираем возможность листать внешний слайдер, если не в начале или не в конце
+            if (!this.isBeginning && !this.isEnd) {
+                slideSwiper.allowSlideNext = false;
+                slideSwiper.allowSlidePrev = false;
+            }
         },
         reachBeginning: function () {
             slideSwiper.allowSlidePrev = true;
@@ -115,17 +111,14 @@ const innerSwiper = new Swiper('.renowned-slider', {
         reachEnd: function () {
             slideSwiper.allowSlideNext = true;
         },
-        fromEdge: function () {
-            slideSwiper.allowSlidePrev = false;
-            slideSwiper.allowSlideNext = false;
+        touchEnd: function () {
+            // Защита: если снова в середине — запретить прокрутку
+            if (!this.isBeginning) slideSwiper.allowSlidePrev = false;
+            if (!this.isEnd) slideSwiper.allowSlideNext = false;
         }
     }
 });
 
-function checkEdges(swiper) {
-    slideSwiper.allowSlidePrev = swiper.isBeginning;
-    slideSwiper.allowSlideNext = swiper.isEnd;
-}
 
 
 
@@ -143,8 +136,6 @@ slideSwiper.on('slideChange', function () {
 
 
 
-
-
 let businessSwiper = new Swiper(".business-center-slider", {
     slidesPerView: 1,
     loop: true,
@@ -156,9 +147,7 @@ let businessSwiper = new Swiper(".business-center-slider", {
 
 let blockSwiper = new Swiper(".block-new-slider", {
     slidesPerView: 3,
-    loop: true,
     spaceBetween: 24,
-
     navigation: {
         nextEl: ".block-button-next",
         prevEl: ".block-button-prev",
@@ -169,7 +158,6 @@ let blockSwiper = new Swiper(".block-new-slider", {
 let gallerySwiper = new Swiper(".gallery-slider", {
     slidesPerView: 3,
     spaceBetween: 24,
-
     loop: true,
     navigation: {
         nextEl: ".gallery-button-next",
