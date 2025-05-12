@@ -1451,49 +1451,49 @@
             </div>
             <div class="gallery-box-mobile">
                 <div class="gallery-cnt">
-                    <a href="./assets/img/gallery-1.jpg" data-fancybox="galleryMob">
+                    <a href="./assets/img/gallery-1.jpg" data-fancybox="photo-mobile">
                         <img src="./assets/img/gallery-1.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
                 <div class="gallery-cnt">
-                    <a href="./assets/img/gallery-2.jpg" data-fancybox="galleryMob">
+                    <a href="./assets/img/gallery-2.jpg" data-fancybox="photo-mobile">
                         <img src="./assets/img/gallery-2.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
                 <div class="gallery-cnt">
-                    <a href="./assets/img/gallery-3.jpg" data-fancybox="galleryMob">
+                    <a href="./assets/img/gallery-3.jpg" data-fancybox="photo-mobile">
                         <img src="./assets/img/gallery-3.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
                 <div class="gallery-cnt">
-                    <a href="./assets/img/gallery-4.jpg" data-fancybox="galleryMob">
+                    <a href="./assets/img/gallery-4.jpg" data-fancybox="photo-mobile">
                         <img src="./assets/img/gallery-4.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
                 <div class="gallery-cnt">
-                    <a href="./assets/img/gallery-5.jpg" data-fancybox="galleryMob">
+                    <a href="./assets/img/gallery-5.jpg" data-fancybox="photo-mobile">
                         <img src="./assets/img/gallery-5.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
                 <div class="gallery-cnt">
-                    <a href="./assets/img/gallery-6.jpg" data-fancybox="galleryMob">
+                    <a href="./assets/img/gallery-6.jpg" data-fancybox="photo-mobile">
                         <img src="./assets/img/gallery-6.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
                 <div class="gallery-cnt">
-                    <a href="./assets/img/gallery-7.jpg" data-fancybox="galleryMob">
+                    <a href="./assets/img/gallery-7.jpg" data-fancybox="photo-mobile">
                         <img src="./assets/img/gallery-7.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
                 </div>
                 <div class="gallery-cnt">
-                    <a href="./assets/img/bg-fon.jpg" data-fancybox="galleryMob">
+                    <a href="./assets/img/bg-fon.jpg" data-fancybox="photo-mobile">
                         <img src="./assets/img/bg-fon.jpg" alt="gallery">
                     </a>
                     <h4>Успейте на день открытых дверей в нашем бизнес центре</h4>
@@ -1621,10 +1621,11 @@
         const menuLinks = document.querySelectorAll('.menu a');
 
         const swiper = new Swiper('.slideLab-slider', {
-            direction: 'vertical',
-            mousewheel: true,
+            direction: "vertical",
             slidesPerView: 1,
-            speed: 800,
+            mousewheel: true,
+            speed: 1200,
+            allowTouchMove: true,
             on: {
                 slideChange: function () {
                     updateActiveMenu(this.activeIndex);
