@@ -79,7 +79,6 @@
                             <li class="active-menu"><a href="#one" data-slide="0">Главная</a></li>
                             <li><a href="#two" data-slide="1">О проекте</a></li>
                             <li><a href="#three" data-slide="2,3">Цифры</a></li>
-                            <li><a href="#" data-slide="3"></a></li>
                             <li><a href="#four" data-slide="4">Выбор недвижимости</a></li>
                             <li><a href="#five" data-slide="5">Новости</a></li>
                             <li><a href="#six" data-slide="6">Объекты AFI</a></li>
@@ -1579,8 +1578,8 @@
 
             const markerElement = document.createElement('img');
             markerElement.src = './assets/img/location.png'; // сюда вставь свою иконку
-            markerElement.style.width = '40px';
-            markerElement.style.height = '40px';
+            markerElement.style.width = '100px';
+            markerElement.style.height = '100px';
 
             const marker = new YMapMarker({coordinates: [37.757319, 55.814643]}, markerElement);
             map.addChild(marker);
@@ -1611,14 +1610,43 @@
     document.addEventListener('DOMContentLoaded', function () {
         const menuLinks = document.querySelectorAll('.menu a');
 
-        const swiper = new Swiper('.slideLab-slider', {
-            direction: 'vertical',
-            mousewheel: true,
+        let slideSwiper = new Swiper(".slideLab-slider", {
+            direction: "vertical",
             slidesPerView: 1,
-            speed: 800,
+            mousewheel: true,
+            speed: 1200,
+            allowTouchMove: true,
             on: {
                 slideChange: function () {
                     updateActiveMenu(this.activeIndex);
+                },
+                // Используем более надёжное событие
+                slideChangeTransitionEnd: function () {
+                    const activeIndex = this.activeIndex;
+                    const activeSlide = this.slides[activeIndex];
+
+                    // Защита от ошибки, если слайд не найден
+                    if (!activeSlide) return;
+
+                    const shouldHideHeader = activeSlide.getAttribute("data-hide-header") === "true";
+
+                    if (shouldHideHeader) {
+                        $(".header").addClass("hide-header");
+                    } else {
+                        $(".header").removeClass("hide-header");
+                    }
+                },
+
+                // Проверяем сразу при инициализации
+                init: function () {
+                    const activeSlide = this.slides[this.activeIndex];
+                    const shouldHideHeader = activeSlide.getAttribute("data-hide-header") === "true";
+
+                    if (shouldHideHeader) {
+                        $(".header").addClass("hide-header");
+                    } else {
+                        $(".header").removeClass("hide-header");
+                    }
                 }
             }
         });
@@ -1629,23 +1657,14 @@
                 e.preventDefault();
                 const slideData = this.getAttribute('data-slide').split(',');
                 const slideIndex = Number(slideData[0]);
-                swiper.slideTo(slideIndex);
+                slideSwiper.slideTo(slideIndex);
             });
         });
 
 
 
 
-        // function updateActiveMenu(index) {
-        //     document.querySelectorAll('.menu li').forEach(li => li.classList.remove('active-menu'));
-        //
-        //     menuLinks.forEach(link => {
-        //         const slides = link.getAttribute('data-slide').split(',').map(Number);
-        //         if (slides.includes(index)) {
-        //             link.parentElement.classList.add('active-menu');
-        //         }
-        //     });
-        // }
+
 
         function updateActiveMenu(index) {
             // Сначала убираем класс active-menu со всех пунктов меню
@@ -1668,7 +1687,7 @@
             link.addEventListener('click', function (e) {
                 e.preventDefault();
                 const slideIndex = Number(this.getAttribute('data-slide'));
-                swiper.slideTo(slideIndex);
+                slideSwiper.slideTo(slideIndex);
                 updateActiveMenu(slideIndex);
             });
         });
@@ -1679,11 +1698,65 @@
                 const slideData = this.getAttribute('data-slide').split(',');
                 const slideIndex = Number(slideData[0]);
 
-                swiper.slideTo(slideIndex);
+                slideSwiper.slideTo(slideIndex);
 
                 updateActiveMenu(slideIndex);
             });
         });
+
+
+
+
+        //
+        // document.querySelectorAll('[data-slide]').forEach(link => {
+        //     link.addEventListener('click', function(e) {
+        //         e.preventDefault();
+        //         const slideIndex = parseInt(this.getAttribute('data-slide'));
+        //         slideSwiper.slideTo(slideIndex);
+        //     });
+        //
+        // });
+
+
+        const innerSwiper = new Swiper('.renowned-slider', {
+            direction: 'vertical',
+            nested: true,
+            mousewheel: true,
+            speed: 600,
+            slidesPerView: 3,
+
+            on: {
+                init: function () {
+                    checkEdges(this);
+                },
+                slideChange: function () {
+                    checkEdges(this);
+                },
+                reachBeginning: function () {
+                    slideSwiper.allowSlidePrev = true;
+                },
+                reachEnd: function () {
+                    slideSwiper.allowSlideNext = true;
+                },
+                fromEdge: function () {
+                    slideSwiper.allowSlidePrev = false;
+                    slideSwiper.allowSlideNext = false;
+                }
+            }
+        });
+
+        function checkEdges(swiper) {
+            slideSwiper.allowSlidePrev = swiper.isBeginning;
+            slideSwiper.allowSlideNext = swiper.isEnd;
+        }
+
+
+        slideSwiper.on('slideChange', function () {
+            slideSwiper.allowSlideNext = true;
+            slideSwiper.allowSlidePrev = true;
+        });
+
+
     });
 
 

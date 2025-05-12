@@ -48,86 +48,12 @@ $('.menu li').on('click', function () {
 
 
 
-let slideSwiper = new Swiper(".slideLab-slider", {
-    direction: "vertical",
-    slidesPerView: 1,
-    mousewheel: true,
-    speed: 1200,
-    allowTouchMove: true,
-    on: {
-        slideChange: function () {
-            // Получаем активный слайд
-            const activeSlide = this.slides[this.activeIndex];
-
-            // Проверяем, есть ли у слайда атрибут data-hide-header
-            const shouldHideHeader = activeSlide.getAttribute("data-hide-header") === "true";
-
-            if (shouldHideHeader) {
-                $(".header").addClass("hide-header");
-            } else {
-                $(".header").removeClass("hide-header");
-            }
-        }
-    }
-
-});
-
 
 document.querySelector('header').addEventListener('wheel', function(e) {
     // Создаем новое событие
     let newEvent = new WheelEvent("wheel", e);
     // Отправляем его в swiper container
     document.querySelector('.slideLab-slider').dispatchEvent(newEvent);
-});
-
-
-
-
-document.querySelectorAll('[data-slide]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const slideIndex = parseInt(this.getAttribute('data-slide'));
-        slideSwiper.slideTo(slideIndex);
-    });
-});
-
-
-const innerSwiper = new Swiper('.renowned-slider', {
-    direction: 'vertical',
-    nested: true,
-    mousewheel: true,
-    speed: 600,
-    slidesPerView: 3,
-
-    on: {
-        init: function () {
-            checkEdges(this);
-        },
-        slideChange: function () {
-            checkEdges(this);
-        },
-        reachBeginning: function () {
-            slideSwiper.allowSlidePrev = true;
-        },
-        reachEnd: function () {
-            slideSwiper.allowSlideNext = true;
-        },
-        fromEdge: function () {
-            slideSwiper.allowSlidePrev = false;
-            slideSwiper.allowSlideNext = false;
-        }
-    }
-});
-
-function checkEdges(swiper) {
-    slideSwiper.allowSlidePrev = swiper.isBeginning;
-    slideSwiper.allowSlideNext = swiper.isEnd;
-}
-
-
-slideSwiper.on('slideChange', function () {
-    slideSwiper.allowSlideNext = true;
-    slideSwiper.allowSlidePrev = true;
 });
 
 

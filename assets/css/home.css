@@ -119,14 +119,14 @@
 }
 header{
     transform: translateY(-100%);
-    transition: 1.1s;
+    transition: 0.6s;
 }
 
 
 
 .home-main-active .hide-header {
     transform: translateY(-100%);
-    transition: 1.0s;
+    transition: 0.6s;
 }
 
 
@@ -1751,9 +1751,6 @@ a[href^="tel"] {
 
 
 
-    .location-map{
-        top: 82px;
-    }
     .contact-map-href{
         top: 30px;
     }
@@ -1774,9 +1771,8 @@ a[href^="tel"] {
         top: 80px;
     }
 
-    .contact-map-href-four{
-        bottom: 80px;
-        top: auto;
+    .contact-map-href-four {
+        top: 204px;
     }
     .contact-map {
         height: 300px;
