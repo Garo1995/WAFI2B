@@ -95,7 +95,6 @@ const innerSwiper = new Swiper('.renowned-slider', {
     direction: 'vertical',
     nested: true,
     mousewheel: true,
-    speed: 600,
     slidesPerView: 3,
     on: {
         slideChange: function () {
