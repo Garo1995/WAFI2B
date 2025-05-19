@@ -1506,7 +1506,7 @@
     }
 
     .error-page-style .btn {
-        margin-top: 66px;
+        margin: 66px auto 0;
         max-width: 423px;
         font-size: 16px;
         height: 60px;
@@ -1517,10 +1517,7 @@
         width: 100%;
     }
 
-    .error-page-style h1 {
-        text-align: left;
-        max-width: 215px;
-    }
+
     .first-business-name h3 {
         line-height: 150%;
     }
@@ -1680,9 +1677,12 @@
         gap: 10px;
         padding: 14px 18px;
     }
+
 }
 @media (max-width: 410px) {
-
+    .error-page-style h1 {
+        max-width: 215px;
+    }
     .first-business-name h4 {
         line-height: 140%;
     }
