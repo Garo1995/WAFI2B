@@ -5,14 +5,9 @@ header {
     left: 0;
     width: 100%;
     z-index: 991;
-    transition: 0.7s;
-
-}
-
-
-header{
     transform: translateY(-100%);
     transition: 0.6s;
+    padding-bottom: 36px;
 }
 
 
@@ -331,7 +326,7 @@ header.scrolled{
     }
 
 }
-@media (max-height: 600px){
+@media (max-width: 600px){
     .mobile-menu a {
         font-size: 18px;
         line-height: 22px;
@@ -369,6 +364,9 @@ header.scrolled{
 
     .mobile-menu ul {
         gap: 23px;
+    }
+    header {
+        padding-bottom: 20px;
     }
 }
 

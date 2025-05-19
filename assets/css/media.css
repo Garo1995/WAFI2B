@@ -43,7 +43,6 @@
     .first-business {
         padding-top: 140px;
         padding-bottom: 90px;
-        height: 848px;
     }
     .infrastructure-cnt h1 {
         font-size: 89px;
@@ -195,9 +194,7 @@
     .great-option-href {
         max-width: 660px;
     }
-    .first-business {
-        height: 667px;
-    }
+
 }
 
 @media (max-width: 1399px) {
@@ -1074,9 +1071,7 @@
         padding: 30px 20px;
     }
     .gallery-mobile:hover{
-        color: #000;
-
-        background: #FFFFFF;
+        color: #FFFFFF;
     }
     .great-option-cnt {
         margin-top: 70px;
@@ -1357,7 +1352,7 @@
     }
 
     .first-business {
-        padding-top: 400px;
+        padding-top: 391px;
         height: auto;
     }
     .first-business-info {

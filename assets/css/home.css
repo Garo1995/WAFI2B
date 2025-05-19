@@ -140,7 +140,7 @@ h1{
 .first-business{
     padding-top: 200px;
     padding-bottom: 127px;
-    height: 1004px;
+    height: 100vh;
     position: relative;
     z-index: 11;
 }
@@ -1343,8 +1343,3 @@ a[href^="tel"] {
     padding-bottom: 0;
 }
 
-@media (max-height: 700px){
-    .first-business {
-        height: 667px;
-    }
-}
