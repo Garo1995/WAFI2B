@@ -1,7 +1,17 @@
-window.addEventListener('load', function() {
-    window.scrollTo(0, 0);
+$(window).on('load', function() {
+    $('html, body').stop().animate({ scrollTop: 0 }, 400);
 });
 
+$(window).on('scroll', function() {
+    const scrollTop = $(this).scrollTop();
+    const header = $('header'); // или замени на свой селектор шапки
+
+    if (scrollTop > 50) { // если прокрутка больше 50px — добавляем класс
+        header.addClass('scrolled');
+    } else {
+        header.removeClass('scrolled');
+    }
+});
 
 $(document).ready(function () {
     setTimeout(function () {
@@ -18,6 +28,44 @@ $(document).ready(function () {
 
     }, 4000);
 });
+
+
+
+// Клик по пункту меню
+$('.menu a').on('click', function (e) {
+    e.preventDefault();
+
+    const targetKey = $(this).data('target');
+    const $target = $('[data-section="' + targetKey + '"]');
+
+    if ($target.length) {
+        $('html, body').stop(true).animate({
+            scrollTop: $target.offset().top - 2
+        }, 800);
+
+        // Обновим активный класс
+        $('.menu li').removeClass('active-menu');
+        $(this).parent().addClass('active-menu');
+    }
+});
+
+// Автоматическая подсветка активного пункта при прокрутке
+$(window).on('scroll', function () {
+    const scrollPos = $(window).scrollTop();
+
+    $('[data-section]').each(function () {
+        const $section = $(this);
+        const sectionTop = $section.offset().top - 100;
+        const sectionBottom = sectionTop + $section.outerHeight();
+        const sectionKey = $section.data('section');
+
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+            $('.menu li').removeClass('active-menu');
+            $('.menu a[data-target="' + sectionKey + '"]').parent().addClass('active-menu');
+        }
+    });
+});
+
 
 
 $(document).ready(function () {
@@ -47,88 +95,19 @@ $('.menu li').on('click', function () {
 })
 
 
-let slideSwiper = new Swiper(".slideLab-slider", {
-    direction: "vertical",
-    slidesPerView: 1,
-    mousewheel: true,
-    speed: 1200,
-    allowTouchMove: true,
-    on: {
-        slideChange: function () {
-            // Получаем активный слайд
-            const activeSlide = this.slides[this.activeIndex];
 
-            // Проверяем, есть ли у слайда атрибут data-hide-header
-            const shouldHideHeader = activeSlide.getAttribute("data-hide-header") === "true";
-
-            if (shouldHideHeader) {
-                $(".header").addClass("hide-header");
-            } else {
-                $(".header").removeClass("hide-header");
-            }
-        }
-    }
-
-});
-
-
-document.querySelector('header').addEventListener('wheel', function(e) {
-    // Создаем новое событие
-    let newEvent = new WheelEvent("wheel", e);
-    // Отправляем его в swiper container
-    document.querySelector('.slideLab-slider').dispatchEvent(newEvent);
-});
-
-
-
-// Если есть кнопки с data-slide, добавим им обработчик тоже
-document.querySelectorAll('[data-slide]').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const slideIndex = Number(this.getAttribute('data-slide'));
-        slideSwiper.slideTo(slideIndex);
-    });
-});
 
 
 const innerSwiper = new Swiper('.renowned-slider', {
     direction: 'vertical',
     nested: true,
-    mousewheel: true,
+    mousewheel: {
+        releaseOnEdges: true,
+    },
     slidesPerView: 3,
-    on: {
-        slideChange: function () {
-            // Убираем возможность листать внешний слайдер, если не в начале или не в конце
-            if (!this.isBeginning && !this.isEnd) {
-                slideSwiper.allowSlideNext = false;
-                slideSwiper.allowSlidePrev = false;
-            }
-        },
-        reachBeginning: function () {
-            slideSwiper.allowSlidePrev = true;
-        },
-        reachEnd: function () {
-            slideSwiper.allowSlideNext = true;
-        },
-        touchEnd: function () {
-            // Защита: если снова в середине — запретить прокрутку
-            if (!this.isBeginning) slideSwiper.allowSlidePrev = false;
-            if (!this.isEnd) slideSwiper.allowSlideNext = false;
-        }
-    }
 });
 
 
-
-
-
-
-
-
-slideSwiper.on('slideChange', function () {
-    slideSwiper.allowSlideNext = true;
-    slideSwiper.allowSlidePrev = true;
-});
 
 
 
@@ -155,9 +134,9 @@ let blockSwiper = new Swiper(".block-new-slider", {
 
 
 let gallerySwiper = new Swiper(".gallery-slider", {
-    slidesPerView: 3,
-    spaceBetween: 24,
-    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 5,
+    speed: 800,
     navigation: {
         nextEl: ".gallery-button-next",
         prevEl: ".gallery-button-prev",
@@ -268,7 +247,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
-        if (window.innerWidth <= 1025) {
             if (currentScroll > lastScrollTop) {
                 header.classList.add('hidden');
             } else {
@@ -276,7 +254,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     header.classList.remove('hidden');
                 }
             }
-        }
 
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     }, false);
@@ -288,18 +265,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-$('.menu a').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-        && location.hostname == this.hostname) {
-        let $target = $(this.hash);
-        $target = $target.length && $target
-            || $('[name=' + this.hash.slice(1) +']');
-        if ($target.length) {
-            let targetOffset = $target.offset().top-1;
-            $('html,body')
-                .animate({scrollTop: targetOffset}, 1200);
-            return false;
-        }
-    }
-});
