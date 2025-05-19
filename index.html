@@ -900,6 +900,10 @@
 <script src="https://api-maps.yandex.ru/v3/?apikey=d130909a-f4b5-453d-85f2-98a45f38ba0c&lang=ru_RU"
         type="text/javascript"></script>
 <script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
 <script src="assets/js/jquery.fancybox.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
 
@@ -907,7 +911,30 @@
 
 <script>
 
+    gsap.registerPlugin(ScrollTrigger);
 
+    const swiper = new Swiper(".renowned-slider", {
+        direction: "vertical",
+        slidesPerView: 3,
+        allowTouchMove: false, // отключаем мышь/тач
+    });
+
+    const totalSlides = swiper.slides.length;
+
+    gsap.to({}, {
+        scrollTrigger: {
+            trigger: ".world-renowned",
+            start: "top top",
+            end: () => "+=" + (window.innerHeight * totalSlides),
+            scrub: 1,
+            pin: true,
+            onUpdate: self => {
+                const progress = self.progress;
+                const index = Math.round(progress * (totalSlides - 1));
+                swiper.slideTo(index);
+            }
+        }
+    });
 </script>
 
 <script>

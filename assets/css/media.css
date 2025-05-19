@@ -5,7 +5,11 @@
     }
 }
 
-
+@media (max-height: 750px){
+    .renowned-slider {
+        height: 728px;
+    }
+}
 @media (max-width: 1800px) {
 
     h1 {
@@ -55,19 +59,18 @@
     }
 
 
-    .gallery-cnt h4 {
-        margin-top: 16px;
-        font-size: 24px;
-        line-height: 29px;
-    }
     .business-street {
         margin-left: 24px;
     }
     .great-option-href {
         max-width: 720px;
     }
-
-
+    .architecture-cnt {
+        padding-top: 208px;
+    }
+    .architecture-main {
+        height: 850px;
+    }
 }
 
 @media (max-width: 1600px) {
@@ -133,7 +136,15 @@
         margin-top: 20px;
         line-height: 120%;
     }
-
+    .architecture-bulding {
+        height: 80%;
+    }
+    .architecture-cnt {
+        padding-top: 158px;
+    }
+    .architecture-main {
+        height: 788px;
+    }
 
     .world-renowned {
         background-position: center;
@@ -165,11 +176,7 @@
     }
 
 
-    .gallery-cnt h4 {
-        margin-top: 16px;
-        font-size: 22px;
-        line-height: 29px;
-    }
+
 
     .business-center-cnt {
         max-width: 495px;
@@ -187,6 +194,9 @@
     }
     .great-option-href {
         max-width: 660px;
+    }
+    .first-business {
+        height: 667px;
     }
 }
 
@@ -253,8 +263,8 @@
     .block-new-box h3 {
         font-size: 20px;
         line-height: 24px;
+        min-height: 78px;
     }
-
     .great-option-href h2 {
         font-size: 33px;
         line-height: 105%;
@@ -372,20 +382,11 @@
         top: 64px;
     }
 
-    .mobile-menu li:after {
-        bottom: -36px;
-    }
 
 
-    .gallery-cnt a {
-        height: 290px;
-    }
 
-    .gallery-cnt h4 {
-        margin-top: 12px;
-        font-size: 22px;
-        line-height: 30px;
-    }
+
+
 
     .gallery-rel .swiper-button-prev span, .gallery-rel .swiper-button-next span {
         max-width: 80px;
@@ -558,16 +559,7 @@
         max-width: 390px;
     }
 
-    .gallery-cnt h4 {
-        margin-top: 12px;
-        padding: 0 12px;
-        font-size: 20px;
-        line-height: 26px;
-    }
 
-    .gallery-cnt a {
-        height: 340px;
-    }
 
     .gallery-rel .swiper-button-prev span, .gallery-rel .swiper-button-next span {
         max-width: 75px;
@@ -585,11 +577,15 @@
     .world-renowned-fl {
         max-width: 560px;
     }
-
+    .architecture-main {
+        height: 634px;
+    }
     .block-contact-info {
         max-width: 790px;
     }
-
+    .architecture-cnt {
+        padding-top: 98px;
+    }
     .be-the-first h3 {
         font-size: 26px;
         line-height: 130%;
@@ -639,6 +635,7 @@
     .location-map {
         left: 47%;
         width: 58px;
+        top: 248px;
     }
     .great-option-href {
         max-width: 500px;
@@ -800,9 +797,9 @@
         left: 6%;
     }
     .location-map {
-        left: 55%;
+        left: 45%;
         width: 100px;
-        top: 282px;
+        top: 256px;
     }
     .contact-map-count span {
         font-size: 24px;
@@ -971,8 +968,7 @@
         text-transform: unset;
     }
     .parameters-btn{
-        display: flex;
-        align-items: center;
+
         transition: 0.3s;
         background: #C49D7699;
         backdrop-filter: blur(15px);
@@ -986,6 +982,7 @@
         z-index: 111;
         max-width: 316px;
         width: 100%;
+        display: none;
     }
     .parameters-btn span{
         color: #FFFFFF;
@@ -1076,7 +1073,11 @@
         bottom: 0;
         padding: 30px 20px;
     }
+    .gallery-mobile:hover{
+        color: #000;
 
+        background: #FFFFFF;
+    }
     .great-option-cnt {
         margin-top: 70px;
         margin-bottom: 60px;
@@ -1238,13 +1239,7 @@
         z-index: 91;
 
     }
-    .gallery-slider {
-        height: auto;
-    }
-    .gallery-slider .swiper-wrapper{
-        display: flex;
-        align-items: center;
-    }
+
 
     .gallery-box-active {
         transform: translateX(0);
@@ -1362,9 +1357,9 @@
     }
 
     .first-business {
-        padding-top: 350px;
+        padding-top: 400px;
+        height: auto;
     }
-
     .first-business-info {
         max-width: 490px;
     }
@@ -1398,7 +1393,14 @@
         line-height: 22px;
         max-width: max-content;
     }
+    .gallery-slider{
+        height: auto;
+    }
 
+    .gallery-slider .swiper-wrapper{
+        display: flex;
+        align-items: center;
+    }
     .architecture-info:after {
         display: none;
     }
@@ -1459,7 +1461,9 @@
         background: #C49D7699;
 
     }
-
+    .block-new-box h3 {
+        min-height: auto;
+    }
     .business-first .metro-town {
         margin-left: 0;
         width: 100%;
@@ -1667,6 +1671,11 @@
     .img-desktop {
         display: none;
     }
+    .location-map {
+        left: 42%;
+        width: 80px;
+        top: 261px;
+    }
 }
 @media (max-width: 439px){
     .world-renowned-info h1{
@@ -1756,9 +1765,6 @@
         font-size: 50px;
     }
 
-    .gallery-cnt a {
-        height: 262px;
-    }
 
     .business-first .metro-town {
         padding-left: 10px;

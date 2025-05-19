@@ -275,7 +275,10 @@ header.scrolled{
         background-position: center;
     }
 
-
+    .mobile-menu a {
+        font-size: 22px;
+        line-height: 24px;
+    }
     .transition-menu {
         top:0;
         transition: 1s;
@@ -322,7 +325,21 @@ header.scrolled{
     }
 
 }
+@media (max-width: 700px){
+    header .btn {
+        margin-bottom: 20px;
+    }
 
+}
+@media (max-height: 600px){
+    .mobile-menu a {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .mobile-menu {
+        padding-top: 131px;
+    }
+}
 @media screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     .mobile-menu {
         padding-bottom: 120px;

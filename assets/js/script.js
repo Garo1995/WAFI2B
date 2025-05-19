@@ -98,14 +98,6 @@ $('.menu li').on('click', function () {
 
 
 
-const innerSwiper = new Swiper('.renowned-slider', {
-    direction: 'vertical',
-    nested: true,
-    mousewheel: {
-        releaseOnEdges: true,
-    },
-    slidesPerView: 3,
-});
 
 
 
@@ -151,6 +143,7 @@ $('.open_modal').on('click', function () {
     let modal = $('#' + attr);
     modal.removeClass('out');
     modal.fadeIn();
+    $('body').addClass('body_fix');
 });
 $(document).on('keydown', function (e) {
     if (e.key === 'Escape' || e.keyCode === 27) {
@@ -158,6 +151,7 @@ $(document).on('keydown', function (e) {
     }
 });
 $('.close').on('click', function () {
+    $('body').removeClass('body_fix');
     let prt = $(this).parents('.modal');
     prt.addClass('out')
     setTimeout(function () {
@@ -166,6 +160,8 @@ $('.close').on('click', function () {
 });
 
 $('.close-this').on('click', function () {
+    $('body').removeClass('body_fix');
+
     let prt = $(this).parents('.modal');
     prt.addClass('out')
     setTimeout(function () {
@@ -175,6 +171,7 @@ $('.close-this').on('click', function () {
 
 $(window).on('click', function (event) {
     $('.modal').each(function () {
+
         let gtattr = $(this).attr('id');
         let new_mod = $('#' + gtattr);
         let md_cnt = $(new_mod).find('.modal-content');
@@ -258,6 +255,15 @@ document.addEventListener('DOMContentLoaded', function () {
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     }, false);
 });
+
+
+
+
+
+
+
+
+
 
 
 
