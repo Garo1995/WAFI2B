@@ -159,6 +159,9 @@ header.scrolled{
 .body_fix {
     overflow: hidden;
 }
+.body_fix .home-page{
+    overflow: hidden;
+}
 
 .mobile-logo {
     display: none;
@@ -302,7 +305,7 @@ header.scrolled{
         height: 100%;
         justify-content: space-between;
         padding-top: 158px;
-        padding-bottom: 24px;
+        padding-bottom: 114px;
         width: 100%;
         overflow: auto;
     }
